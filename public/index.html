@@ -24,97 +24,97 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
-    authDomain: "glocaltechseva.firebaseapp.com",
-    databaseURL: "https://glocaltechseva.firebaseio.com",
-    projectId: "glocaltechseva",
-    storageBucket: "glocaltechseva.appspot.com",
-    messagingSenderId: "775906035664",
-    appId: "1:775906035664:web:238e3bef340bd103"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  function loadBlogs(){
-          var db = firebase.firestore();
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+            authDomain: "glocaltechseva.firebaseapp.com",
+            databaseURL: "https://glocaltechseva.firebaseio.com",
+            projectId: "glocaltechseva",
+            storageBucket: "glocaltechseva.appspot.com",
+            messagingSenderId: "775906035664",
+            appId: "1:775906035664:web:238e3bef340bd103"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        function loadBlogs() {
+            var db = firebase.firestore();
 
-      console.log("here")
-      
-    db.collection("blogs").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        console.log(doc.id, " => ", doc.data());
+            console.log("here")
 
-        var postBox= '<div class="container"> <div class="row"> <div class="col-8">'+
-                    '<div class="single-home-blog">'+
-                        '<div class="card" style="width:22rem;">'+
-                            '<img class="head-image" src="" class="card-img-top" alt="blog">'+
-                            '<div class="card-body">'+
-                                '<a class="cat">Technology</a> | <span class="time"> March 30, 2019</span>'+
-                                '<a>'+
-                                    '<h5 class="card-title title"></h5>'+
-                                '</a>'+
-                                '<ul>'+
-                                    '<li> <span class="ti-comments"></span>2 Comments</li>'+
-                                    '<li> <span class="ti-heart"></span>0 Like</li>'+
-                                '</ul>'+
-                               
-                                '<br><br><a class="float-right" style="color: #dfba1f"><p style="color:#ec6a3e">Read More ➔</p></a>'
-                            '</div>'+
-                        '</div>'+
-                    '</div> </div> </div>'
-                
-    
-	
-                
-				var dataBox = document.createElement('card');
-				dataBox.innerHTML = postBox;
-				dataBox.getElementsByClassName('title')[0].innerHTML = doc.get("title");
-                dataBox.getElementsByClassName('time')[0].innerHTML = new Date(doc.get("time").toDate()).toLocaleString();
-                dataBox.getElementsByClassName('head-image')[0].src = doc.get("image");
-                dataBox.getElementsByClassName('cat')[0].innerHTML = doc.get("cat");
+            db.collection("blogs").get().then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    console.log(doc.id, " => ", doc.data());
 
+                    var postBox = '<div class="container"> <div class="row"> <div class="col-8">' +
+                        '<div class="single-home-blog">' +
+                        '<div class="card" style="width:22rem;">' +
+                        '<img class="head-image" src="" class="card-img-top" alt="blog">' +
+                        '<div class="card-body">' +
+                        '<a class="cat">Technology</a> | <span class="time"> March 30, 2019</span>' +
+                        '<a>' +
+                        '<h5 class="card-title title"></h5>' +
+                        '</a>' +
+                        '<ul>' +
+                        '<li> <span class="ti-comments"></span>2 Comments</li>' +
+                        '<li> <span class="ti-heart"></span>0 Like</li>' +
+                        '</ul>' +
 
-    console.log("this is: "+doc.id);
-    console.log(window.location.href);
-                            document.getElementById("p").appendChild(dataBox);
+                        '<br><br><a class="float-right" style="color: #dfba1f"><p style="color:#ec6a3e">Read More ➔</p></a>'
+                    '</div>' +
+                        '</div>' +
+                        '</div> </div> </div>'
 
 
 
-})
 
-                
+                    var dataBox = document.createElement('card');
+                    dataBox.innerHTML = postBox;
+                    dataBox.getElementsByClassName('title')[0].innerHTML = doc.get("title");
+                    dataBox.getElementsByClassName('time')[0].innerHTML = new Date(doc.get("time").toDate()).toLocaleString();
+                    dataBox.getElementsByClassName('head-image')[0].src = doc.get("image");
+                    dataBox.getElementsByClassName('cat')[0].innerHTML = doc.get("cat");
 
-				
 
-    })
+                    console.log("this is: " + doc.id);
+                    console.log(window.location.href);
+                    document.getElementById("p").appendChild(dataBox);
 
 
-}
 
-function sub(){
-    var db = firebase.firestore();
-    db.collection("discussion").add({
-    email: document.getElementById('email').value,
-    name:  document.getElementById('name').value,
-    date: (new Date()).toString(),
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
-}
+                })
 
-</script>
+
+
+
+
+            })
+
+
+        }
+
+        function sub() {
+            var db = firebase.firestore();
+            db.collection("discussion").add({
+                email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                date: (new Date()).toString(),
+            })
+                .then(function (docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function (error) {
+                    console.error("Error adding document: ", error);
+                });
+        }
+
+    </script>
 
 </head>
 
@@ -187,7 +187,7 @@ function sub(){
                                 <p>
                                     <h4>Deliver the best product to your customers </h4>
                                 </p>
-                                <a href="#" class="btn_1">
+                                <a href="service.html" class="btn_1">
                                     <p style="color:white; font-size:20px">View Services</p>
                                 </a>
                                 <a href="#" class="btn_1">
@@ -254,24 +254,25 @@ function sub(){
                 <div class="col-md-12 offset-xl-1 col-xl-12">
                     <div class="about_text">
                         <h2>Is Your Poorly Designed Website Or Application <br> Turning Away Customers ? Let's discuss
-</h2>
-                      
-      <div class="form-wrap" id="mc_embed_signup">
-                        <div class="form-inline" >
-                              <input id="name" class="form-control" name="NAME" placeholder="Your name"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name '"
-                                required="" type="email"> 
-                                <div style="width:100px"></div>
-                            <input id="email" class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                required="" type="email">
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
+                        </h2>
 
-                            <div class="info"></div>
+                        <div class="form-wrap" id="mc_embed_signup">
+                            <div class="form-inline">
+                                <input id="name" class="form-control" name="NAME" placeholder="Your name"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name '" required=""
+                                    type="email">
+                                <div style="width:100px"></div>
+                                <input id="email" class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                    required="" type="email">
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                        type="text">
+                                </div>
+
+                                <div class="info"></div>
+                            </div>
                         </div>
-                    </div>
                         <button onclick="sub()" href="#" class="btn_2">Submit</button>
                     </div>
                 </div>
@@ -520,10 +521,18 @@ function sub(){
                     <div class="page-title text-center">
                         <!-- Here is where mixitup ontent will appear ..... -->
                         <ul>
-                            <li class="filter" data-filter="all"><h5>All</h5></li>
-                            <li class="filter" data-filter=".redColor"><h5>Gallery0</h5></li>
-                            <li class="filter" data-filter=".bluecolor"><h5>Gallery1</h5></li>
-                            <li class="filter" data-filter=".greencolor"><h5>Gallery2</h5></li>
+                            <li class="filter" data-filter="all">
+                                <h5>All</h5>
+                            </li>
+                            <li class="filter" data-filter=".redColor">
+                                <h5>Gallery0</h5>
+                            </li>
+                            <li class="filter" data-filter=".bluecolor">
+                                <h5>Gallery1</h5>
+                            </li>
+                            <li class="filter" data-filter=".greencolor">
+                                <h5>Gallery2</h5>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -730,13 +739,13 @@ function sub(){
                     </div>
                 </div>
             </div>
-       
+
             <div id="p" class="row mt-10">
 
-            
+
             </div>
-               
-            </div>
+
+        </div>
         </div>
     </section>
     <!--::blog_part end::-->
