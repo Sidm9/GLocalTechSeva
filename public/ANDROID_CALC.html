@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>APP COST CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <script>
+  
+    function changeToAndroid(id) {
+      var option1 = document.getElementById("Android").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+    }
+
+    function changeToHybrid(id) {
+      var option1 = document.getElementById("Hybrid").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+    }
+
+    function changeToB2B (id) {
+      var option = document.getElementById("B2B").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToB2C (id) {
+      var option = document.getElementById("B2C").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToDesignY (id) {
+      var option = document.getElementById("DesignYes").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+    }
+
+    function changeToDesignN (id) {
+      var option = document.getElementById("DesignNo").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+    }
+
+    function changeToProjectY (id) {
+      var option = document.getElementById("Project-Yes").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+    }
+
+    function changeToProjectN (id) {
+      var option = document.getElementById("Project-No").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+    }
+ 
+    function changeToScreenA (id) {
+      var option = document.getElementById("5-10").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenB (id) {
+      var option = document.getElementById("10-20").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToerScreenC (id) {
+      var option = document.getElementById("20-40").innerHTML;
+      document.getElementById("Screen").innerHTML  = option;
+    }
+
+    function submit() {
+
+    }
+
+  </script>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <h2> <center>APP COST CALCULATOR</center></h2>
+      
+      <div class="row">
+
+        <p>You want to build an app in ?</p>
+        <div class="dropdown col-sm">
+
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id="App">
+              App 
+          </button>
+          <div class="dropdown-menu">
+            <p  class="dropdown-item" id="Hybrid" onclick="changeToHybrid()">Hybrid - Xamarin, Flutter and ReactNative</p>
+            <p class="dropdown-item" onclick="changeToAndroid()" id="Android">Android </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <p> Who is your target audience </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id ="Target-Audience">
+              Target Audience 
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" onclick = "changeToB2B() " id="B2B">B2B </p>
+            <p class="dropdown-item" href="#" onclick = "changeToB2C() " id="B2C">B2C </p>
+          </div>
+        </div>
+
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+        <p>Are your designs ready ?</p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Designs">
+              Designs Check
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" id="DesignYes" onclick="changeToDesignY()">Yes</p>
+            <p class="dropdown-item" href="#" id="DesignNo"  onclick="changeToDesignN()">No</p>
+          </div>
+        </div>
+      </div>
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <p>If No, then do you have a project requirement document </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Project">
+              Project Document
+       
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" onclick = "changeToProjectY()" id="Project-Yes">Yes</a>
+            <a class="dropdown-item" href="#" onclick = "changeToProjectN()" id="Project-No">No</a>
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+      <div class="row">
+        <br>
+        <p> If No, then share any competitor app </p>
+
+        <div class="dropdown col-sm">
+          <input type="url">
+        </div>
+
+      </div>
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <p>How many screens will the app has </p>
+        <div class="dropdown col-sm">
+
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Screen">
+              Number of Screens.
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" onclick = "changeToScreenA()" id="5-10"> 5-10 </a>
+            <a class="dropdown-item" href="#" onclick = "changeToScreenB()" id="10-20"> 10-20</a>
+            <a class="dropdown-item" href="#" onclick = "changeToScreenC()" id="20-40"> 20-40</a>
+          </div>
+
+        </div>
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+
+        <p> Thanks for answering all the questions. One last step, we promise, your quote will reach your inbox in
+          next 60 seconds</p> <br>
+      </div>
+      <br>
+
+      ENTER YOUR NAME : <input type="name" id="name"><br> <br>
+      ENTER YOUR EMAIL : <input type="email" id="email">
+      <br><br>
+      <input type="checkbox"><b> I agree to share the information with GlocalTechSeva LLP. All the data shared is for
+      official purpose and for the best interest of both parties. </b>
+      <br> <br>
+      <center>
+
+        <button style="border-radius: 20px" align="middle" font color="white" type="button" class="btn btn-warning"
+          onclick="Button()" data-toggle="dropdown">
+       <b>  <font size = "+1" >Submit </font>  </b> </center>
+      </font></button>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+</body>
+
+</html>

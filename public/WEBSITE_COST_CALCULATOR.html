@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>APP COST CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <script>
+
+
+    /* function graysolves(id)
+     {
+       if(id=='blog')
+       {
+         var option1 = document.getElementById("blog").innerHTML;
+       document.getElementById("Website").innerHTML = option1;
+       }
+       else if(id=='business')
+       {
+         var option1 = document.getElementById("business").innerHTML;
+       document.getElementById("Website").innerHTML = option1;
+       }
+       else if(id=='business')
+       {
+         var option = document.getElementById("Networking").innerHTML;
+       document.getElementById("Website").innerHTML = option;
+       }
+       else if(id=='business')
+       {
+         var option = document.getElementById("Ecommerce").innerHTML;
+       document.getElementById("Website").innerHTML = option;
+       } 
+       else if (id = 'Wordpress') {
+ 
+       }
+     }
+     */
+
+    function changeTowebsiteblog(id) {
+      var option1 = document.getElementById("blog").innerHTML;
+      document.getElementById("Website").innerHTML = option1;
+    }
+
+    function changeTowebsiteBusiness(id) {
+      var option1 = document.getElementById("business").innerHTML;
+      document.getElementById("Website").innerHTML = option1;
+    }
+
+    function changeToNetworking(id) {
+      var option = document.getElementById("Networking").innerHTML;
+      document.getElementById("Website").innerHTML = option;
+    }
+
+    function changeToEcommerce(id) {
+      var option = document.getElementById("Ecommerce").innerHTML;
+      document.getElementById("Website").innerHTML = option;
+    }
+
+    function changeToWordpress(id) {
+      var option = document.getElementById("Wordpress").innerHTML;
+      document.getElementById("Platform").innerHTML = option;
+    }
+
+    function changeToMagento(id) {
+      var option = document.getElementById("Magento").innerHTML;
+      document.getElementById("Platform").innerHTML = option;
+    }
+
+    function changeToShopify(id) {
+      var option = document.getElementById("Shopify").innerHTML;
+      document.getElementById("Platform").innerHTML = option;
+    }
+
+    function changeToYouGuidemeonThis(id) {
+      var option = document.getElementById("YouGuidemeonThis").innerHTML;
+      document.getElementById("Platform").innerHTML = option;
+    }
+
+    function changeToRegisteredY(id) {
+      var option = document.getElementById("RegisteredYes").innerHTML;
+      document.getElementById("DomainHosting").innerHTML = option;
+    }
+
+    function changeToRegisteredN(id) {
+      var option = document.getElementById("RegisteredNo").innerHTML;
+      document.getElementById("DomainHosting").innerHTML = option;
+    }
+    
+    function changeToSecure1(id) {
+      var option = document.getElementById("RegisteredNo").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+
+    function changeToSecure0(id) {
+      var option = document.getElementById("RegisteredNo").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+
+    function changeToSecureN(id) {
+      var option = document.getElementById("RegisteredNo").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+
+    function changeToZoho(id) {
+      var option = document.getElementById("Zoho").innerHTML;
+      document.getElementById("Payment-Options").innerHTML = option;
+    }
+
+    function changeToSalesForce(id) {
+      var option = document.getElementById("SalesForce").innerHTML;
+      document.getElementById("Payment-Options").innerHTML = option;
+    }
+
+    function changeToCustom(id) {
+      var option = document.getElementById("Custom").innerHTML;
+      document.getElementById("Payment-Options").innerHTML = option;
+    }
+
+    function changeToOther(id) {
+      var option = document.getElementById("Other").innerHTML;
+      document.getElementById("Payment-Options").innerHTML = option;
+    }
+
+    function submit() {
+
+    }
+
+  </script>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <h2>
+      <center>WEBSITE COST CALCULATOR</center>
+    </h2>
+
+    <div class="row">
+
+      <p>What is your website about </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Website">
+          Type
+        </button>
+        <div class="dropdown-menu">
+
+          <p class="dropdown-item" id="blog" onclick="changeTowebsiteblog()">Blog</p>
+          <p class="dropdown-item" id="business" onclick="changeTowebsiteBusiness()">Business</p>
+          <p class="dropdown-item" onclick="changeToNetworking()" id="Networking">Social Networking </p>
+          <p class="dropdown-item" onclick="changeToEcommerce()" id="Ecommerce">Ecommerce </p>
+        </div>
+      </div>
+    </div>
+
+    <hr width="100%">
+
+    <div class="row">
+      <p> Which CMS platform are you looking for the new website to be built on? </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Platform">
+          Platform
+        </button>
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" onclick="changeToWordpress()" id="Wordpress">Wordpress </p>
+          <p class="dropdown-item" href="#" onclick="changeToMagento() " id="Magento">Magento </p>
+          <p class="dropdown-item" href="#" onclick="changeToShopify() " id="Shopify">Shopify </p>
+          <p class="dropdown-item" href="#" onclick="changeToYouGuidemeonThis() " id="YouGuidemeonThis">Guide me on This
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <hr width="100%">
+
+    <div class="row">
+      <p> Have you registered your domain and hosting service </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="DomainHosting">
+          Registered domain and hosting service ?
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="RegisteredYes" onclick="changeToRegisteredY()">Yes</p>
+          <p class="dropdown-item" href="#" id="RegisteredNo" onclick="changeToRegisteredN()">No</p>
+        </div>
+      </div>
+    </div>
+
+
+    <hr width="100%">
+
+    <div class="row">
+      <p>How do you want to secure your site </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="SiteSecured">
+          Site Secured?
+
+        </button>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" onclick="changeToSecure1()" id="Secure1">Yes</a>
+          <a class="dropdown-item" href="#" onclick="changeToSecure0()" id="Secure0">Basic SSL certificate </a>
+          <a class="dropdown-item" href="#" onclick="changeToSecureN()" id="NotSecured">Not that important</a>
+        </div>
+      </div>
+    </div>
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> What is your Design Theme Preference </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="SiteSecured">
+          Site Secured?
+
+        </button>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" onclick="changeToFree()" id="Free">Free</a>
+          <a class="dropdown-item" href="#" onclick="changeToNew()" id="New">New </a>
+          <a class="dropdown-item" href="#" onclick="changeToCustom()" id="Custom">Custom</a>
+        </div>
+      </div>
+    </div>
+
+
+    <hr width="100%">
+
+    <div class="row">
+      <p> How many approximate number of pages do you think the new website will have? </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Screen">
+          Number of Webpages.
+
+        </button>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#" onclick="changeToScreenA()" id="5-10"> 5-10 </a>
+          <a class="dropdown-item" href="#" onclick="changeToScreenB()" id="10-20"> 10-20</a>
+          <a class="dropdown-item" href="#" onclick="changeToScreenC()" id="20-40"> 20-40</a>
+        </div>
+
+      </div>
+    </div>
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> Will there be any sign up needed for your visitors </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Sign-Up">
+          Sign-Up Need
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="SignUpYes" onclick="changeToSignUpY()">Yes</p>
+          <p class="dropdown-item" href="#" id="SignUpNo" onclick="changeToSignUpN()">No</p>
+        </div>
+      </div>
+    </div>
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> If Yes, How will they sign up </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Sign-UpM">
+          Sign-Up Methods
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="SignUpID" onclick="changeToSignUpID()">ID</p>
+          <p class="dropdown-item" href="#" id="SignUpSocial" onclick="changeToSignUpSocial()">Social Network</p>
+        </div>
+      </div>
+    </div>
+
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> Do you need any Payment integration (say PayPal or Stripe) </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Payment">
+          Payment Integration
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="PaymentY" onclick="changeToPaymentY()">Yes</p>
+          <p class="dropdown-item" href="#" id="PaymentN" onclick="changeToPaymentN()">No</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> If Yes, then what </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Payment-Options">
+          Payment Options
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="Zoho" onclick="changeToZoho()">Zoho</p>
+          <p class="dropdown-item" href="#" id="SalesForce" onclick="changeToSalesForce()">Sales Force</p>
+          <p class="dropdown-item" href="#" id="Custom" onclick="changeToCustom()">Custom CRM</p>
+          <p class="dropdown-item" href="#" id="Other" onclick="changeToOther()">Other</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <hr width="100%">
+
+
+    <div class="row">
+      <p> What Other Features Do you Want </p>
+      <div class="dropdown col-sm">
+
+        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+          data-toggle="dropdown" id="Payment Options">
+          Other Features
+
+        </button>
+
+        <div class="dropdown-menu">
+          <p class="dropdown-item" href="#" id="Online" onclick="changeToOnline()">Online Chat</p>
+          <p class="dropdown-item" href="#" id="Review" onclick="changeToReview()">Review System</p>
+          <p class="dropdown-item" href="#" id="Search" onclick="changeToSearch()">Search</p>
+          <p class="dropdown-item" href="#" id="Notification" onclick="changeToNotification()">Other</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row">
+
+      <p> Thanks for answering all the questions. One last step, we promise, your quote will reach your inbox in
+        next 60 seconds</p> <br>
+    </div>
+    <br>
+
+    ENTER YOUR NAME : <input type="name" id="name"><br> <br>
+    ENTER YOUR EMAIL : <input type="email" id="email">
+    <br><br>
+
+    <input type="checkbox"><b> I agree to share the information with GlocalTechSeva LLP. All the data shared is for
+      official purpose and for the best interest of both parties. </b>
+    <br> <br>
+    <center>
+
+      <button style="border-radius: 20px" align="middle" font color="white" type="button" class="btn btn-warning"
+        onclick="Button()" data-toggle="dropdown">
+        <b>
+          <font size="+1"> Submit </font>
+        </b> </center>
+    </font></button>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+</body>
+
+</html>
