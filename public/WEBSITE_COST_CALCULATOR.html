@@ -90,7 +90,7 @@
       var option = document.getElementById("RegisteredNo").innerHTML;
       document.getElementById("DomainHosting").innerHTML = option;
     }
-    
+
     function changeToSecure1(id) {
       var option = document.getElementById("RegisteredNo").innerHTML;
       document.getElementById("SiteSecured").innerHTML = option;
@@ -125,6 +125,85 @@
       var option = document.getElementById("Other").innerHTML;
       document.getElementById("Payment-Options").innerHTML = option;
     }
+    
+    function changeToFree(id) {
+      var option = document.getElementById("Free").innerHTML;
+      document.getElementById("Preference").innerHTML = option;
+    }
+
+    function changeToSecure0(id) {
+      var option = document.getElementById("Secure0").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+
+    function changeToSecure1(id) {
+      var option = document.getElementById("Secure1").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+
+    function changeToSecureN(id) {
+      var option = document.getElementById("SecureN").innerHTML;
+      document.getElementById("SiteSecured").innerHTML = option;
+    }
+    
+    function changeToNew(id) {
+      var option = document.getElementById("New").innerHTML;
+      document.getElementById("Preference").innerHTML = option;
+    }
+    
+    function changeToCustom(id) {
+      var option = document.getElementById("Custom").innerHTML;
+      document.getElementById("Preference").innerHTML = option;
+    }
+
+    function changeToScreenA(id) {
+      var option = document.getElementById("5-10").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenB(id) {
+      var option = document.getElementById("10-20").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenC(id) {
+      var option = document.getElementById("20-40").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToSignUpID(id) {
+      var option = document.getElementById("SignUpID").innerHTML;
+      document.getElementById("Sign-UpM").innerHTML = option;
+    }
+
+    function changeToSignUpSocial(id) {
+      var option = document.getElementById("SignUpSocial").innerHTML;
+      document.getElementById("Sign-UpM").innerHTML = option;
+    }
+
+    
+    function changeToPaymentY(id) {
+      var option = document.getElementById("PaymentY").innerHTML;
+      document.getElementById("Payment").innerHTML = option;
+    }
+
+    
+    function changeToPaymentN(id) {
+      var option = document.getElementById("PaymentN").innerHTML;
+      document.getElementById("Payment").innerHTML = option;
+    }
+
+    function changeToSignUpY(id) {
+      var option = document.getElementById("SignUpYes").innerHTML;
+      document.getElementById("Sign-Up").innerHTML = option;
+    }
+
+    function changeToSignUpN(id) {
+      var option = document.getElementById("SignUpNo").innerHTML;
+      document.getElementById("Sign-Up").innerHTML = option;
+    }
+
+
 
     function submit() {
 
@@ -143,8 +222,19 @@
       <center>WEBSITE COST CALCULATOR</center>
     </h2>
 
+
+
+
+
+
+
+
+
+
+
     <div class="row">
 
+      <hr width="100%">
       <p>What is your website about </p>
       <div class="dropdown col-sm">
 
@@ -232,8 +322,8 @@
       <div class="dropdown col-sm">
 
         <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
-          data-toggle="dropdown" id="SiteSecured">
-          Site Secured?
+          data-toggle="dropdown" id="Preference">
+          Theme
 
         </button>
 
@@ -358,25 +448,36 @@
 
 
     <div class="row">
-      <p> What Other Features Do you Want </p>
-      <div class="dropdown col-sm">
+      <p> What Other Features Do you Want &nbsp; &nbsp; &nbsp; &nbsp; </p>
 
-        <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
-          data-toggle="dropdown" id="Payment Options">
-          Other Features
+      <br>
 
-        </button>
-
-        <div class="dropdown-menu">
-          <p class="dropdown-item" href="#" id="Online" onclick="changeToOnline()">Online Chat</p>
-          <p class="dropdown-item" href="#" id="Review" onclick="changeToReview()">Review System</p>
-          <p class="dropdown-item" href="#" id="Search" onclick="changeToSearch()">Search</p>
-          <p class="dropdown-item" href="#" id="Notification" onclick="changeToNotification()">Other</p>
-        </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value=""> Online Chat &nbsp; &nbsp; &nbsp; <br> 
       </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Review System &nbsp; &nbsp; &nbsp;
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Search &nbsp; &nbsp; &nbsp;
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" value="">Other &nbsp; &nbsp; &nbsp;
+        </label>
+      </div>
+
     </div>
 
 
+
+
+    <hr width="100%">
 
 
     <div class="row">
