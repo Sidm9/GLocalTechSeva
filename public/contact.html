@@ -2,160 +2,324 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bizcon</title>
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bizcon</title>
+  <link rel="icon" href="img/favicon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- themify CSS -->
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="css/flaticon.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 </head>
 
 <body>
-    <!--::header part start::-->
-    <header class="main_menu">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+  <!--::header part start::-->
+  <header class="main_menu">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
-                            id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About</a>
-                                </li>
-                                
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="blog.html">Blog</a>
-                                      <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                  </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Page
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="project.html">Project</a>
-                                      <a class="dropdown-item" href="project_details.html">Project Details</a>
-                                      <a class="dropdown-item" href="service.html">Services</a>
-                                      <a class="dropdown-item" href="elements.html">Elements</a>
-                                  </div>
-                              </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header part end-->
+            <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner text-center">
-                        <div class="breadcrumb_iner_item">
-                            <h2>Contact us</h2>
-                            <p>Home<span>-</span>Contact</p>
-                        </div>
-                    </div>
-                </div>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Blog
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="blog.html">Blog</a>
+                    <a class="dropdown-item" href="single-blog.html">Single blog</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Page
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="project.html">Project</a>
+                    <a class="dropdown-item" href="project_details.html">Project Details</a>
+                    <a class="dropdown-item" href="service.html">Services</a>
+                    <a class="dropdown-item" href="elements.html">Elements</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
             </div>
+          </nav>
         </div>
-    </section>
-    <!-- breadcrumb start-->
+      </div>
+    </div>
+  </header>
+  <!-- Header part end-->
+
+  <!-- breadcrumb start-->
+  <section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb_iner text-center">
+            <div class="breadcrumb_iner_item">
+              <h2>Contact us</h2>
+              <p>Home<span>-</span>Contact</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb start-->
 
   <!-- ================ contact section start ================= -->
   <section class="contact-section section_padding">
     <div class="container">
-     
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
-      <div class="row" style="padding: 10px">
-        <div class="col-7">
-          <p style="font-size: 18px;"> <i> 
-            <br/><br/>
-              Your message will be personally answered by Rahul (our Founder) within 30 minutes -3 business days. We feel clients using their professional email address have serious intent for doing business. However, for privacy purposes, if you are comfortable using Gmail, Yahoo or Live, please do not hold back.
-            </i>
-          </p>
-        </div>
 
-        <div class="col-5">
-          <b style="color: black">
-            
-<p style="font-size:16px">Hi, Glad that you want to see where we are located. Just in case you have landed directly on the page, let us tell you what we do</p>
-<br/><br/>
-1. Design mindblowing websites with WordPress and Shopify <a href="./website_detail.html"><b> view > </b></a>
-<br/><br/>
-2.  Develop robust web apps that will not crash <a href="./webapp_detail.html"><b> view > </b></a>
-<br/><br/>
-3.  Become your virtual startup co-founder to design that killer MVP of your mobile app <a href="./Mobile_detail.html"><b> view > </b></a>
-<br/>
-<br/><br/>
-To know more about GlocaltechSeva, do visit the <a href = "./about.html" > <b>About Us</b> </a>  Page
-          </b>
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="row" style="padding: 10px">
+          <div class="col-7 ">
+            <p style="font-size: 18px;"> <i>
+                <br /><br />
+                Your message will be personally answered by Rahul (our Founder) within 30 minutes -3 business days. We
+                feel clients using their professional email address have serious intent for doing business. However, for
+                privacy purposes, if you are comfortable using Gmail, Yahoo or Live, please do not hold back.
+              </i>
+            </p>
+          </div>
+
+          <div class="col-5">
+            <b style="color: black">
+
+              <p style="font-size:16px">Hi, Glad that you want to see where we are located. Just in case you have landed
+                directly on the page, let us tell you what we do</p>
+              <br /><br />
+              1. Design mindblowing websites with WordPress and Shopify <a href="./website_detail.html"><b> view >
+                </b></a>
+              <br /><br />
+              2. Develop robust web apps that will not crash <a href="./webapp_detail.html"><b> view > </b></a>
+              <br /><br />
+              3. Become your virtual startup co-founder to design that killer MVP of your mobile app <a
+                href="./Mobile_detail.html"><b> view > </b></a>
+              <br />
+              <br /><br />
+              To know more about GlocaltechSeva, do visit the <a href="./about.html"> <b>About Us</b> </a> Page
+            </b>
+          </div>
         </div>
       </div>
 
+      <script>
+
+
+        function changeToWebsite(id) {
+          var option = document.getElementById("Website").innerHTML;
+          document.getElementById("Platform").innerHTML = option;
+        }
+
+        function changeToWebApp(id) {
+          var option = document.getElementById("WebApp").innerHTML;
+          document.getElementById("Platform").innerHTML = option;
+        }
+
+        function changeToApp(id) {
+          var option = document.getElementById("App").innerHTML;
+          document.getElementById("Platform").innerHTML = option;
+        }
+
+        function showCheckBoxes(id) {
+          if (id == "Webapp") {
+            var temp = document.getElementById("WebApp").innerHTML;
+            showebAppCheck();
+          }
+          if (id == "Website") {
+            showWebsiteCheck();
+          }
+          else {
+            showAppCheck();
+          }
+        }
+      </script>
+      <!--
+<script>
+
+        function showWebsiteCheck() {
+          <div class="form-check">
+            <p>What is Your Budget For The Project </p>
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" value="">USD 1000 - 3000
+        </label>
+      </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">USD 3000 - USD 6000  
+        </label>
+      </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="">USD 6000 - 10000
+        </label>
+      </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">MORE THAN 10000
+          </label>
+        </div>
+
+                  }
+          
+          
+          
+       function showebAppCheck() {
+
+
+                    <p>What is Your Budget For The Project </p>
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" value="">USD 10000 - 20000
+      </label>
     </div>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="">USD 20000 - USD 30000  
+      </label>
+    </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" value="">USD 30000 - 400000
+      </label>
+    </div>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">MORE THAN 40000
+        </label>
+      </div>
+
+                          }
+                  
+                  
+                  
+        function showAppCheck() {
+
+                            <p>What is Your Budget For The Project </p>
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="">USD 3000 - 6000
+    </label>
+  </div>
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">USD 6000 - USD 12000  
+    </label>
+  </div>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input type="checkbox" class="form-check-input" value="">USD 12000 - 25000
+    </label>
+  </div>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="">MORE THAN 25000
+      </label>
+    </div>
+
+  
+        }
+                          
+      </script>
+-->
+
+      <div class="col-md-6 offset-md-3">
+        <div class="row">
+          <p>
+            <h4>Which are you building? </h4>
+          </p>
+
+
+          <div class="dropdown col-sm">
+
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id="Platform">
+              Platform
+            </button>
+            <div class="dropdown-menu">
+              <p class="dropdown-item" href="#" onclick="changeToWebApp()" id="WebApp">WebApp </p>
+              <p class="dropdown-item" href="#" onclick="changeToWebsite() " id="Website">Website </p>
+              <p class="dropdown-item" href="#" onclick="changeToApp() " id="App">App </p>
+            </div>
+
+        
+
+          </div>
+        
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+
+
+
+
       <div class="row">
         <div class="col-12">
           <h2 class="contact-title">Get in Touch</h2>
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+            novalidate="novalidate">
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                  
-                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Enter Message'></textarea>
+
+                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
+                    placeholder='Enter Message'></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name'>
+                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address'>
+                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>
+                  <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
                 </div>
               </div>
             </div>
@@ -192,112 +356,115 @@ To know more about GlocaltechSeva, do visit the <a href = "./about.html" > <b>Ab
   </section>
   <!-- ================ contact section end ================= -->
 
-<!-- footer part start-->
-<section class="footer-area section_padding">
+  <!-- footer part start-->
+  <section class="footer-area section_padding">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Our services</h4>
-                <ul>
-                    <li><a href="#">Website Design</a></li>
-                    <li><a href="#">Webapp Development</a></li>
-                    <li><a href="#">Mobile App Development</a></li>
-                </ul>
-            </div>
-            <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Estimates</h4>
-                <ul>
-                    <li><a href="#">Website cost calculator</a></li>
-                    <li><a href="#">Webapp cost calculator</a></li>
-                    <li><a href="#">Mobile App cost calculator</a></li>
-                </ul>
-            </div>
-           
-            <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">E-books</a></li>
-                    <li><a href="#">Infographics</a></li>
-                </ul>
-            </div>
+      <div class="row">
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Our services</h4>
+          <ul>
+            <li><a href="#">Website Design</a></li>
+            <li><a href="#">Webapp Development</a></li>
+            <li><a href="#">Mobile App Development</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Estimates</h4>
+          <ul>
+            <li><a href="#">Website cost calculator</a></li>
+            <li><a href="#">Webapp cost calculator</a></li>
+            <li><a href="#">Mobile App cost calculator</a></li>
+          </ul>
+        </div>
 
-            <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-              <h4>Address</h4>
-              <ul>
-                  <li><a href="#">Blogs</a></li>
-                  <li><a href="#">E-books</a></li>
-                  <li><a href="#">Infographics</a></li>
-              </ul>
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">E-books</a></li>
+            <li><a href="#">Infographics</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Address</h4>
+          <ul>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">E-books</a></li>
+            <li><a href="#">Infographics</a></li>
+          </ul>
+        </div>
+
+
+        <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Newsletter</h4>
+          <p>You can trust us. we only send promo offers,</p>
+          <div class="form-wrap" id="mc_embed_signup">
+            <form target="_blank"
+              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+              method="get" class="form-inline">
+              <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+              <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+
+              <div class="info"></div>
+            </form>
           </div>
-
-
-            <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                <h4>Newsletter</h4>
-                <p>You can trust us. we only send promo offers,</p>
-                <div class="form-wrap" id="mc_embed_signup">
-                    <form target="_blank"
-                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                        method="get" class="form-inline">
-                        <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                            required="" type="email">
-                        <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
-                        <div style="position: absolute; left: -5000px;">
-                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                        </div>
-
-                        <div class="info"></div>
-                    </form>
-                </div>
-            </div>
         </div>
+      </div>
     </div>
-</section>
-<footer class="copyright_part">
+  </section>
+  <footer class="copyright_part">
     <div class="container">
-        <div class="row align-items-center">
-            <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                <a href="#"><i class="ti-facebook"></i></a>
-                <a href="#"> <i class="ti-twitter"></i> </a>
-                <a href="#"><i class="ti-instagram"></i></a>
-                <a href="#"><i class="ti-skype"></i></a>
-            </div>
+      <div class="row align-items-center">
+        <p class="footer-text m-0 col-lg-8 col-md-12">
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+            class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+        <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="#"> <i class="ti-twitter"></i> </a>
+          <a href="#"><i class="ti-instagram"></i></a>
+          <a href="#"><i class="ti-skype"></i></a>
         </div>
+      </div>
     </div>
-</footer>
-<!-- footer part end-->
+  </footer>
+  <!-- footer part end-->
 
-<!-- jquery plugins here-->
-<!-- jquery -->
-<script src="js/jquery-1.12.1.min.js"></script>
-<!-- popper js -->
-<script src="js/popper.min.js"></script>
-<!-- bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
-<!-- easing js -->
-<!-- particles js -->
-<script src="js/contact.js"></script>
-<!-- ajaxchimp js -->
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<!-- validate js -->
-<script src="js/jquery.validate.min.js"></script>
-<!-- form js -->
-<script src="js/jquery.form.js"></script>
-<script src="js/jquery.magnific-popup.js"></script>
-<!-- swiper js -->
-<script src="js/swiper.min.js"></script>
-<!-- swiper js -->
-<script src="js/masonry.pkgd.js"></script>
-<!-- particles js -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- swiper js -->
-<script src="js/slick.min.js"></script>
-<!-- custom js -->
-<script src="js/custom.js"></script>
+  <!-- jquery plugins here-->
+  <!-- jquery -->
+  <script src="js/jquery-1.12.1.min.js"></script>
+  <!-- popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- easing js -->
+  <!-- particles js -->
+  <script src="js/contact.js"></script>
+  <!-- ajaxchimp js -->
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <!-- validate js -->
+  <script src="js/jquery.validate.min.js"></script>
+  <!-- form js -->
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.magnific-popup.js"></script>
+  <!-- swiper js -->
+  <script src="js/swiper.min.js"></script>
+  <!-- swiper js -->
+  <script src="js/masonry.pkgd.js"></script>
+  <!-- particles js -->
+  <script src="js/owl.carousel.min.js"></script>
+  <!-- swiper js -->
+  <script src="js/slick.min.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
 
 
 
