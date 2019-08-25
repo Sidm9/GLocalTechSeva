@@ -25,6 +25,76 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <style>
+    /* The container */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+    
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    </style>
 </head>
 
 <body>
@@ -117,20 +187,22 @@
           </div>
 
           <div class="col-5">
-            <b style="color: black">
+            <p style="color: black">
 
-              <p style="font-size:16px">Hi, Glad that you want to see where we are located. Just in case you have landed
+              <p style="font-size:20px">Hi, Glad that you want to see where we are located. Just in case you have landed
                 directly on the page, let us tell you what we do</p>
-              <br /><br />
+              <br />
+              <p>
               1. Design mindblowing websites with WordPress and Shopify <a href="./website_detail.html"><b> view >
                 </b></a>
-              <br /><br />
+              <br />
               2. Develop robust web apps that will not crash <a href="./webapp_detail.html"><b> view > </b></a>
-              <br /><br />
+              <br />
               3. Become your virtual startup co-founder to design that killer MVP of your mobile app <a
                 href="./Mobile_detail.html"><b> view > </b></a>
+              </p>
               <br />
-              <br /><br />
+           
               To know more about GlocaltechSeva, do visit the <a href="./about.html"> <b>About Us</b> </a> Page
             </b>
           </div>
@@ -143,16 +215,27 @@
         function changeToWebsite(id) {
           var option = document.getElementById("Website").innerHTML;
           document.getElementById("Platform").innerHTML = option;
+          document.getElementById('checkWebsites').style.display = 'block';
+          document.getElementById('checkMobileApps').style.display = 'none';
+          document.getElementById('checkWebApps').style.display = 'none';
+
+
         }
 
         function changeToWebApp(id) {
           var option = document.getElementById("WebApp").innerHTML;
           document.getElementById("Platform").innerHTML = option;
+          document.getElementById('checkWebsites').style.display = 'none';
+          document.getElementById('checkMobileApps').style.display = 'none';
+          document.getElementById('checkWebApps').style.display = 'block';
         }
 
         function changeToApp(id) {
           var option = document.getElementById("App").innerHTML;
           document.getElementById("Platform").innerHTML = option;
+          document.getElementById('checkWebsites').style.display = 'none';
+          document.getElementById('checkMobileApps').style.display = 'block';
+          document.getElementById('checkWebApps').style.display = 'none';
         }
 
         function showCheckBoxes(id) {
@@ -168,119 +251,205 @@
           }
         }
       </script>
-      <!--
-<script>
+ 
 
-        function showWebsiteCheck() {
-          <div class="form-check">
-            <p>What is Your Budget For The Project </p>
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" value="">USD 1000 - 3000
-        </label>
+<h2 class="contact-title">Get in Touch</h2>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Name</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+  </div>
+
+  <div class="form-group">
+      <label for="exampleFormControlTextarea1">Email</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Company name</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
       </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" value="">USD 3000 - USD 6000  
-        </label>
-      </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="">USD 6000 - 10000
-        </label>
-      </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="">MORE THAN 10000
-          </label>
+
+      <div class="form-group">
+          <label for="exampleFormControlTextarea1">What problem are you trying to solve?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
-                  }
-          
-          
-          
-       function showebAppCheck() {
+
+      <div class="row">
+
+         
+        <div class="col-4">
+          <h1>SELECT A PLATFORM</h1>
+        </div>
+
+        <div class="col-8">
 
 
-                    <p>What is Your Budget For The Project </p>
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" value="">USD 10000 - 20000
-      </label>
-    </div>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">USD 20000 - USD 30000  
-      </label>
-    </div>
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input" value="">USD 30000 - 400000
-      </label>
-    </div>
-                        <div class="form-check">
-                          <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" value="">MORE THAN 40000
-        </label>
-      </div>
 
-                          }
-                  
-                  
-                  
-        function showAppCheck() {
-
-                            <p>What is Your Budget For The Project </p>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" value="">USD 3000 - 6000
-    </label>
-  </div>
-                            <div class="form-check">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">USD 6000 - USD 12000  
-    </label>
-  </div>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" value="">USD 12000 - 25000
-    </label>
-  </div>
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="">MORE THAN 25000
-      </label>
-    </div>
-
-  
-        }
-                          
-      </script>
--->
-
-      <div class="col-md-6 offset-md-3">
-        <div class="row">
-          <p>
-            <h4>Which are you building? </h4>
-          </p>
-
-
-          <div class="dropdown col-sm">
+       
+          <div class="dropdown">
 
             <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
               data-toggle="dropdown" id="Platform">
               Platform
             </button>
-            <div class="dropdown-menu">
-              <p class="dropdown-item" href="#" onclick="changeToWebApp()" id="WebApp">WebApp </p>
-              <p class="dropdown-item" href="#" onclick="changeToWebsite() " id="Website">Website </p>
-              <p class="dropdown-item" href="#" onclick="changeToApp() " id="App">App </p>
-            </div>
 
-        
-
+              <div class="dropdown-menu">
+                <p class="dropdown-item" href="#" onclick="changeToWebApp()" id="WebApp">WebApp </p>
+                <p class="dropdown-item" href="#" onclick="changeToWebsite() " id="Website">Website </p>
+                <p class="dropdown-item" href="#" onclick="changeToApp() " id="App">App </p>
+              </div>
           </div>
-        
         </div>
       </div>
+    
 
+      <div id="checkWebsites" style="display: none">
+          <p> What is your budget for your website?</p>
+      <label class="container">USD 1000 - USD 3000
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 3000 - USD 6000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 6000 - USD 10000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">MORE THAN USD 10000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+
+      <p> How soon do you want to launch your websites ? </p>
+
+      <label class="container">Within two weeks
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Within 1 month
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">For now, I am gathering information
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">I am not sure.
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <a href="service.html" class="btn_1">
+              <p style="color: white;">SUBMIT</p>
+          </a>
+    </div>
+
+    <div id="checkWebApps" style="display: none">
+        <p> What is your budget your webapp?</p>
+      <label class="container">USD 10000 - USD 20000
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 20000 - USD 30000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 30000 - USD 40000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">MORE THAN USD 40000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+
+      <p> How soon do you want to launch your webapp ? </p>
+
+      <label class="container">Within two weeks
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Within 1 month
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">For now, I am gathering information
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">I am not sure.
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <a href="service.html" class="btn_1">
+              <p style="color: white;">SUBMIT</p>
+          </a>
+    </div>
+
+    <div id="checkMobileApps" style="display: none">
+     <p> What is your budget your mobile app?</p>
+      <label class="container">USD 3000 - USD 6000
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 6000 - USD 12000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">USD 12000 - USD 25000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">MORE THAN USD 25000
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+
+      <p> How soon do you want to launch your mobile app ? </p>
+
+      <label class="container">Within two weeks
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Within 1 month
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">For now, I am gathering information
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">I am not sure.
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <a href="service.html" class="btn_1">
+              <p style="color: white;">SUBMIT</p>
+          </a>
+
+    </div>
+
+
+    
       <hr width="100%">
 
 
@@ -290,43 +459,10 @@
 
       <div class="row">
         <div class="col-12">
-          <h2 class="contact-title">Get in Touch</h2>
+         
         </div>
         <div class="col-lg-8">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-            novalidate="novalidate">
-            <div class="row">
-              <div class="col-12">
-                <div class="form-group">
-
-                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                    placeholder='Enter Message'></textarea>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
-                </div>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <button type="submit" class="button button-contactForm btn_4">Send Message</button>
-            </div>
-          </form>
+         
         </div>
         <div class="col-lg-4">
           <div class="media contact-info">
