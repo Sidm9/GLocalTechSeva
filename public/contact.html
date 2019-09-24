@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Bizcon</title>
+  <title>Speak to Our IT Expert -Small Business Websites | Apps For Startups</title>
   <link rel="icon" href="img/favicon.png">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,9 +23,67 @@
   <link rel="stylesheet" href="css/slick.css">
   <!-- style CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/glocaltechseva.appspot.com/o/Logo.png?alt=media&token=87defe3a-41c0-4fd7-a540-dcf26c0ded66" />
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devigntech.com/"/>
+  <meta property="og:title" content="Speak to Our IT Expert -Small Business Websites | Apps For Startups" />
+  <meta property="og:description" content="Looking to Find a Local Software Company Services? Don't worry, we will help you design your website with WordPress and Shopify. Or, if you have the great mobile app idea, you are in the right place. We have launched products  for many small businesses with Xamarin, ReactNative and Flutter development frameworks.
+  "
+/>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
+
+  
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+          authDomain: "glocaltechseva.firebaseapp.com",
+          databaseURL: "https://glocaltechseva.firebaseio.com",
+          projectId: "glocaltechseva",
+          storageBucket: "glocaltechseva.appspot.com",
+          messagingSenderId: "775906035664",
+          appId: "1:775906035664:web:238e3bef340bd103"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      </script>
+
+  <script>
+  $("#submitMobile").click(function(){
+        console.log("this is it")
+        var value=$("input:radio[name=mobileAppRad]:checked").val();
+        console.log(value);
+        alert(value);
+        });
+
+  $('input[name=mobileAppRad]').click(function(){
+  console.log('Hey you clicked this: ' + this.value);
+
+  if(this.value == 'Fixed Rate'){
+    rate_value = $('#r1').value;
+  } else if(this.value =='Variable Rate'){
+   rate_value = $('#r2').value;
+  } else if(this.value =='Multi Rate'){
+   rate_value = $('#r3').value;
+  }  
+
+  $('#results').innerHTML = rate_value;
+});
+
+        </script>
   <style>
     /* The container */
     .container {
@@ -104,7 +162,7 @@
       <div class="row align-items-center">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+            <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -119,28 +177,13 @@
                   <a class="nav-link" href="about.html">About</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Blog
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="blog.html">Blog</a>
-                    <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Page
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="project.html">Project</a>
-                    <a class="dropdown-item" href="project_details.html">Project Details</a>
-                    <a class="dropdown-item" href="service.html">Services</a>
-                    <a class="dropdown-item" href="elements.html">Elements</a>
-                  </div>
-                </li>
+                
+               
+                <li class="nav-item">
+                        <a class="nav-link" href="service.html">Services</a>
+                    </li>
+               
+              
                 <li class="nav-item active">
                   <a class="nav-link" href="contact.html">Contact</a>
                 </li>
@@ -154,7 +197,7 @@
   <!-- Header part end-->
 
   <!-- breadcrumb start-->
-  <section class="breadcrumb breadcrumb_bg">
+  <!-- <section class="breadcrumb breadcrumb_bg">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -167,8 +210,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- breadcrumb start-->
+
+  <img src="./img/contactus.jpg"/>
 
   <!-- ================ contact section start ================= -->
   <section class="contact-section section_padding">
@@ -203,16 +248,21 @@
               </p>
               <br />
            
-              To know more about GlocaltechSeva, do visit the <a href="./about.html"> <b>About Us</b> </a> Page
+              To know more about GyanDevign Tech, do visit the <a href="./about.html"> <b>About Us</b> </a> Page
             </b>
           </div>
         </div>
       </div>
 
+
       <script>
 
 
+        
+
+        var option = 0;
         function changeToWebsite(id) {
+          option = 2;
           var option = document.getElementById("Website").innerHTML;
           document.getElementById("Platform").innerHTML = option;
           document.getElementById('checkWebsites').style.display = 'block';
@@ -223,6 +273,7 @@
         }
 
         function changeToWebApp(id) {
+          option = 0;
           var option = document.getElementById("WebApp").innerHTML;
           document.getElementById("Platform").innerHTML = option;
           document.getElementById('checkWebsites').style.display = 'none';
@@ -231,6 +282,7 @@
         }
 
         function changeToApp(id) {
+          option = 1;
           var option = document.getElementById("App").innerHTML;
           document.getElementById("Platform").innerHTML = option;
           document.getElementById('checkWebsites').style.display = 'none';
@@ -250,43 +302,212 @@
             showAppCheck();
           }
         }
+
+
+        function submitWebAppRequest() { 
+
+          var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var company = document.getElementById("company").value;
+            var problems = document.getElementById("problems").value;
+            var how = document.getElementById("howwebapp").value;
+            
+            if(name!=null && email!=null && company!=null && problems!=null, how!=null){
+          var one = "", two = "";
+            var ele = document.getElementsByName('webAppRad');  
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) {
+                one = ele[i].value;
+                console.log(ele[i].value)
+                }
+            } 
+
+
+            var ele2 = document.getElementsByName('webAppRad1'); 
+            for(i = 0; i < ele2.length; i++) { 
+                if(ele2[i].checked) {
+                two = ele2[i].value
+                console.log(ele2[i].value)
+                }
+            } 
+
+            if(ele2 != null && ele != null){
+              console.log("null")
+            }
+
+            else console.log("not null, ready")
+
+
+            var db = firebase.firestore();
+
+           db.collection('contactus').add({
+              name : name,
+              email : email,
+              company : company,
+              problems : problems,
+              budget : one,
+              timeframe : two,
+              type : "webapp",
+              POC:how,
+              time : firebase.firestore.Timestamp.fromDate(new Date())
+            }).then(function(v){
+              alert("Thankyou, we will contact you shortly.")
+            })
+          }else{
+            alert("All fields are required.")
+          }
+
+        }
+
+
+        function submitWebsiteRequest() { 
+          var one="", two=""
+            var ele = document.getElementsByName('websiteRad');  
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) {
+                  one = ele[i].value;
+                  console.log(ele[i].value)
+                }
+                
+            } 
+
+
+            var ele2 = document.getElementsByName('websiteRad1'); 
+            for(i = 0; i < ele2.length; i++) { 
+                if(ele2[i].checked){
+                  two = ele2[i].value;
+                  console.log(ele2[i].value)
+
+                } 
+            } 
+
+            if(ele2 != null && ele != null){
+              console.log("null")
+            }
+
+            else console.log("not null, ready");
+
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var company = document.getElementById("company").value;
+            var problems = document.getElementById("problems").value;
+            var how = document.getElementById("howwebsite").value;
+
+            var db = firebase.firestore();
+
+           db.collection('contactus').add({
+              name : name,
+              email : email,
+              company : company,
+              problems : problems,
+              budget : one,
+              timeframe : two,
+              type : "website",
+              POC : how,
+              time : firebase.firestore.Timestamp.fromDate(new Date())
+            })
+        }
+
+        function submitMobileRequest() { 
+          var one="", two="";
+            var ele = document.getElementsByName('mobileAppRad');  
+            for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) {
+                  one = ele[i].value;
+                  console.log(ele[i].value)
+
+                }
+
+            } 
+
+
+            var ele2 = document.getElementsByName('mobileAppRad1'); 
+            for(i = 0; i < ele2.length; i++) { 
+                if(ele2[i].checked) {
+                  two = ele2[i].value;
+                  console.log(ele2[i].value)
+
+                }
+
+            } 
+
+            if(ele2 != null && ele != null){
+              console.log("null")
+            }
+
+            else console.log("not null, ready");
+
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var company = document.getElementById("company").value;
+            var problems = document.getElementById("problems").value;
+            var how = document.getElementById("howmobile").value;
+
+            var db = firebase.firestore();
+
+           db.collection('contactus').add({
+              name : name,
+              email : email,
+              company : company,
+              problems : problems,
+              budget : one,
+              timeframe : two,
+              type : "mobileapp",
+              POC : how,
+              time : firebase.firestore.Timestamp.fromDate(new Date())
+            })
+        } 
+
+        function mobileappsubmit(){
+          var m1one = document.getElementById('mradone').checked;
+          var m1two = document.getElementById('mradtwo').checked;
+          var m1three = document.getElementById('mradthree').checked;
+          var m1four = document.getElementById('mradfour').checked;
+
+          var m21one = document.getElementById('m2radone').checked;
+          var m21two = document.getElementById('m2radtwo').checked;
+          var m21three = document.getElementById('m2radthree').checked;
+          var m21four = document.getElementById('m2radfour').checked;
+
+          if(m1one && m21one){
+
+          }
+
+        }
       </script>
  
 
 <h2 class="contact-title">Get in Touch</h2>
 <div class="form-group">
-    <label for="exampleFormControlTextarea1">Name</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+    <label for="name">Name</label>
+    <textarea class="form-control" id="name" rows="1"></textarea>
   </div>
 
   <div class="form-group">
-      <label for="exampleFormControlTextarea1">Email</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+      <label for="email">Email</label>
+      <textarea class="form-control" id="email" rows="1"></textarea>
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Company name</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+        <label for="company">Company name</label>
+        <textarea class="form-control" id="company" rows="1"></textarea>
       </div>
 
       <div class="form-group">
-          <label for="exampleFormControlTextarea1">What problem are you trying to solve?</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="problems">What problem are you trying to solve?</label>
+          <textarea class="form-control" id="problems" rows="3"></textarea>
         </div>
 
 
-      <div class="row">
-
-         
+      <div class="row">       
         <div class="col-4">
           <h1>SELECT A PLATFORM</h1>
         </div>
+        <br/> <br/> <br/>
 
         <div class="col-8">
-
-
-
-       
           <div class="dropdown">
 
             <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
@@ -305,146 +526,156 @@
     
 
       <div id="checkWebsites" style="display: none">
-          <p> What is your budget for your website?</p>
+          <h3> What is your budget for your website?</h3>
       <label class="container">USD 1000 - USD 3000
-        <input type="checkbox" checked="checked">
+        <input type="radio" name="websiteRad"  value="USD 1000 - USD 3000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 3000 - USD 6000
-        <input type="checkbox">
+        <input type="radio" name="websiteRad" value="USD 3000 - USD 6000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 6000 - USD 10000
-        <input type="checkbox">
+        <input type="radio" name="websiteRad" value="USD 6000 - USD 10000">
         <span class="checkmark"></span>
       </label>
       <label class="container">MORE THAN USD 10000
-        <input type="checkbox">
+        <input type="radio" name="websiteRad" value="MORE THAN USD 10000">
         <span class="checkmark"></span>
       </label>
 
-      <p> How soon do you want to launch your websites ? </p>
+      <br/> <br/> <br/>
+
+      <h3> How soon do you want to launch your websites ? </h3>
 
       <label class="container">Within two weeks
-          <input type="checkbox" checked="checked">
+          <input type="radio"  name="websiteRad1"  value="Within two weeks">
           <span class="checkmark"></span>
         </label>
         <label class="container">Within 1 month
-          <input type="checkbox">
+          <input type="radio"  name="websiteRad1" value="Within 1 month">
           <span class="checkmark"></span>
         </label>
         <label class="container">For now, I am gathering information
-          <input type="checkbox">
+          <input type="radio"  name="websiteRad1" value="For now, I am gathering information">
           <span class="checkmark"></span>
         </label>
         <label class="container">I am not sure.
-          <input type="checkbox">
+          <input type="radio"  name="websiteRad1" value="I am not sure.">
           <span class="checkmark"></span>
         </label>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="howwebsite">How did you hear about us?</label>
+            <textarea class="form-control" id="howwebsite" rows="3"></textarea>
           </div>
 
-          <a href="service.html" class="btn_1">
+          <div onclick="submitWebsiteRequest()"><a class="btn_1">
               <p style="color: white;">SUBMIT</p>
-          </a>
+          </a></div>
     </div>
 
     <div id="checkWebApps" style="display: none">
-        <p> What is your budget your webapp?</p>
+        <h3> What is your budget for your webapp?</h3>
       <label class="container">USD 10000 - USD 20000
-        <input type="checkbox" checked="checked">
+        <input type="radio" name="webAppRad"  value="USD 10000 - USD 20000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 20000 - USD 30000
-        <input type="checkbox">
+        <input type="radio" name="webAppRad" value="USD 20000 - USD 30000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 30000 - USD 40000
-        <input type="checkbox">
+        <input type="radio" name="webAppRad" value="USD 30000 - USD 40000">
         <span class="checkmark"></span>
       </label>
       <label class="container">MORE THAN USD 40000
-        <input type="checkbox">
+        <input type="radio" name="webAppRad" value="MORE THAN USD 40000">
         <span class="checkmark"></span>
       </label>
+      <br/> <br/> <br/>
 
-      <p> How soon do you want to launch your webapp ? </p>
+      <h3> How soon do you want to launch your webapp ? </h3>
 
       <label class="container">Within two weeks
-          <input type="checkbox" checked="checked">
+          <input type="radio" name="webAppRad1"  value="Within two weeks">
           <span class="checkmark"></span>
         </label>
         <label class="container">Within 1 month
-          <input type="checkbox">
+          <input type="radio" name="webAppRad1" value="Within 1 month">
           <span class="checkmark"></span>
         </label>
         <label class="container">For now, I am gathering information
-          <input type="checkbox">
+          <input type="radio" name="webAppRad1" value="For now, I am gathering information">
           <span class="checkmark"></span>
         </label>
         <label class="container">I am not sure.
-          <input type="checkbox">
+          <input type="radio" name="webAppRad1" value="I am not sure.">
           <span class="checkmark"></span>
         </label>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="howwebapp">How did you hear about us?</label>
+            <textarea class="form-control" id="howwebapp" rows="3"></textarea>
           </div>
-          <a href="service.html" class="btn_1">
+          <div onclick="submitWebAppRequest()"><a class="btn_1">
               <p style="color: white;">SUBMIT</p>
-          </a>
+          </a></div>
     </div>
 
     <div id="checkMobileApps" style="display: none">
-     <p> What is your budget your mobile app?</p>
+     <h3> What is your budget for your mobile app?</j3>
       <label class="container">USD 3000 - USD 6000
-        <input type="checkbox" checked="checked">
+        <input id="mradone" type="radio" name="mobileAppRad" value="USD 3000 - USD 6000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 6000 - USD 12000
-        <input type="checkbox">
+        <input id="mradtwo" type="radio" name="mobileAppRad" value="USD 6000 - USD 12000">
         <span class="checkmark"></span>
       </label>
       <label class="container">USD 12000 - USD 25000
-        <input type="checkbox">
+        <input id="mradthree" type="radio" name="mobileAppRad" value="USD 12000 - USD 25000">
         <span class="checkmark"></span>
       </label>
       <label class="container">MORE THAN USD 25000
-        <input type="checkbox">
+        <input id="mradfour" type="radio" name="mobileAppRad" value="MORE THAN USD 25000">
         <span class="checkmark"></span>
       </label>
 
-      <p> How soon do you want to launch your mobile app ? </p>
+      <br/> <br/> <br/>
+
+      <h3> How soon do you want to launch your mobile app ? </h3>
 
       <label class="container">Within two weeks
-          <input type="checkbox" checked="checked">
+          <input id="m2radone" type="radio" name="mobileAppRad1" value="Within two weeks">
           <span class="checkmark"></span>
         </label>
         <label class="container">Within 1 month
-          <input type="checkbox">
+          <input id="m2radtwo" type="radio" name="mobileAppRad1" value="Within 1 month">
           <span class="checkmark"></span>
         </label>
         <label class="container">For now, I am gathering information
-          <input type="checkbox">
+          <input id="m2radthree" type="radio" name="mobileAppRad1" value="For now, I am gathering information">
           <span class="checkmark"></span>
         </label>
         <label class="container">I am not sure.
-          <input type="checkbox">
+          <input id="m2radfour" type="radio" name="mobileAppRad1" value="I am not sure.">
           <span class="checkmark"></span>
         </label>
 
+      
+        <br/><br/><br/>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">How did you hear about us?</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="howmobile">How did you hear about us?</label>
+            <textarea class="form-control" id="howmobile" rows="3"></textarea>
           </div>
 
-          <a href="service.html" class="btn_1">
+         
+
+          <div onclick="submitMobileRequest()"><a class="btn_1">
               <p style="color: white;">SUBMIT</p>
-          </a>
+          </a></div>
+          
 
     </div>
 
@@ -457,121 +688,103 @@
 
 
 
-      <div class="row">
-        <div class="col-12">
-         
-        </div>
-        <div class="col-lg-8">
-         
-        </div>
-        <div class="col-lg-4">
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-home"></i></span>
-            <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-            <div class="media-body">
-              <h3>00 (440) 9865 562</h3>
-              <p>Mon to Fri 9am to 6pm</p>
-            </div>
-          </div>
-          <div class="media contact-info">
-            <span class="contact-info__icon"><i class="ti-email"></i></span>
-            <div class="media-body">
-              <h3>support@colorlib.com</h3>
-              <p>Send us your query anytime!</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
   </section>
   <!-- ================ contact section end ================= -->
 
   <!-- footer part start-->
   <section class="footer-area section_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-          <h4>Our services</h4>
-          <ul>
-            <li><a href="#">Website Design</a></li>
-            <li><a href="#">Webapp Development</a></li>
-            <li><a href="#">Mobile App Development</a></li>
-          </ul>
-        </div>
-        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-          <h4>Estimates</h4>
-          <ul>
-            <li><a href="#">Website cost calculator</a></li>
-            <li><a href="#">Webapp cost calculator</a></li>
-            <li><a href="#">Mobile App cost calculator</a></li>
-          </ul>
-        </div>
-
-        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">E-books</a></li>
-            <li><a href="#">Infographics</a></li>
-          </ul>
-        </div>
-
-        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-          <h4>Address</h4>
-          <ul>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">E-books</a></li>
-            <li><a href="#">Infographics</a></li>
-          </ul>
-        </div>
-
-
-        <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-          <h4>Newsletter</h4>
-          <p>You can trust us. we only send promo offers,</p>
-          <div class="form-wrap" id="mc_embed_signup">
-            <form target="_blank"
-              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-              method="get" class="form-inline">
-              <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Your Email Address '" required="" type="email">
-              <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
-              <div style="position: absolute; left: -5000px;">
-                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-              </div>
-
-              <div class="info"></div>
-            </form>
+      <div class="container-fluid">
+        <div class="row">
+  
+            <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+                <h4>ABOUT US</h4>
+                <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+               </div>
+  
+          <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#"><p>Website Design</p></a></li>
+              <li><a href="#"><p>Webapp Development</p></a></li>
+              <li><a href="#"><p>Mobile App Development</p></a></li>
+            </ul>
+          </div>
+         
+  
+          <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#"><p>Blogs</p></a></li>
+              <li><a href="#"><p>Free resources</p></a></li>
+            </ul>
+          </div> -->
+  
+        
+  
+          <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+            <h4>India Address</h4>
+  <p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+  
+  Mobile: +91 75078 35565<br/>
+  Email: rahulg@devigntech.com<br/>
+  </p>
+          </div>
+  
+          <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+            <h4>Canada Address</h4>
+  <p>Unit #100 5230 South Service Road <br/>
+    Burlington Ontario Canada L7L5K2<br/>
+    Mobile: +14164187463<br/>
+    Email: biz@devigntech.com<br/>
+    
+  </p>
+          </div>
+  
+  
+        
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      
+      </div>
+    </section>
+
   <footer class="copyright_part">
     <div class="container">
       <div class="row align-items-center">
-        <p class="footer-text m-0 col-lg-8 col-md-12">
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;
-          <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
-            class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-        <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-          <a href="#"><i class="ti-facebook"></i></a>
-          <a href="#"> <i class="ti-twitter"></i> </a>
-          <a href="#"><i class="ti-instagram"></i></a>
-          <a href="#"><i class="ti-skype"></i></a>
-        </div>
+          <p class="footer-text m-0 col-lg-8 col-md-12">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved 
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            <div style="display: inline;" class="col-lg-4 col-md-12 text-center text-right">
+                <div style="display: inline;" onclick="openquora()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/quora.png"></img></div> 
+                <div style="display: inline;" onclick="openfacebook()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/facebook.png"></img></div> 
+                <div style="display: inline;" onclick="openlinkedin()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/linkedin.png"></img></div> 
+              </div>
       </div>
     </div>
   </footer>
+
+
+  <script>
+      function openquora(){
+ window.open("https://www.quora.com/profile/Rahul-Gulati-7");
+}
+
+function openfacebook(){
+ window.open("https://www.facebook.com/gyandevigntech/");
+}
+
+function openlinkedin(){
+ window.open("https://www.linkedin.com/company/gyandevign-tech-services");
+}
+ </script>
   <!-- footer part end-->
 
   <!-- jquery plugins here-->

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <title>WEB APP COST CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      </style>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+        authDomain: "glocaltechseva.firebaseapp.com",
+        databaseURL: "https://glocaltechseva.firebaseio.com",
+        projectId: "glocaltechseva",
+        storageBucket: "glocaltechseva.appspot.com",
+        messagingSenderId: "775906035664",
+        appId: "1:775906035664:web:238e3bef340bd103"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+  <script>
+
+
+    var industry = "";
+    var design = "";
+    var techstack = "";
+    var coreFeatures = "";
+    var admindash = "";
+    var security = "";
+    var testedon = "";
+    var deployedon = "";
+    var coreFeaturesCount = 0;
+    var adminDCount = 0;
+    var securityCount = 0;
+  
+    function changeToAndroid(id) {
+      var option1 = document.getElementById("Android").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+    }
+
+    function changeToHybrid(id) {
+      var option1 = document.getElementById("Hybrid").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+    }
+
+    function changeToJAM (id) {
+      var option = document.getElementById("JAM").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+      techstack = "JAM"
+    }
+
+    function changeToMEAN (id) {
+      var option = document.getElementById("MEAN").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+      techstack = "MEAN"
+
+    }
+
+    function changeToNRAS(id){
+        var option = document.getElementById("NRAS").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+      techstack = "NRAS"
+
+    }
+
+    function changeToDesignY (id) {
+      var option = document.getElementById("DesignYes").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+      console.log("here")
+      design = "yes";
+    //  document.getElementById("projectDocs").style.display = "none";
+
+    }
+
+    function changeToDesignN (id) {
+      var option = document.getElementById("DesignNo").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+    //  document.getElementById("projectDocs").style.display = "inline";
+      design = "No";
+    }
+
+    function changeToProjectY (id) {
+      var option = document.getElementById("Project-Yes").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+   //   document.getElementById("shareComp").style.display = "none";
+
+
+    }
+
+    function changeToProjectN (id) {
+      var option = document.getElementById("Project-No").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+    //  document.getElementById("shareComp").style.display = "inline";
+
+    }
+ 
+    function changeToScreenA (id) {
+      var option = document.getElementById("5-10").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenB (id) {
+      var option = document.getElementById("10-20").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenC (id) {
+      var option = document.getElementById("20-40").innerHTML;
+      document.getElementById("Screen").innerHTML  = option;
+    }
+
+
+    function changeToFirebase(id){
+      var option = document.getElementById("gf").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAmazon(id){
+      var option = document.getElementById("aws").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAzure(id){
+      var option = document.getElementById("ma").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToInternalStorage(id){
+      var option = document.getElementById("mes").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function submit() {
+
+
+    }
+
+    function changeToOnSite(){
+    var option = document.getElementById("OnSite").innerHTML;
+      document.getElementById("deploying").innerHTML  = option;
+      deployedon = "on site";
+    }
+
+    function changeToCloud(){
+        var option = document.getElementById("cloud").innerHTML;
+      document.getElementById("deploying").innerHTML  = option;
+      deployedon = "cloud";
+    }
+
+    function calcAndUpload(){
+
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+
+      var test = document.getElementsByName('test');
+  for(i = 0; i < test.length; i++) { 
+                if(test[i].checked) {
+               testedon = testedon + " , " + test[i].value
+                console.log(test[i].value)
+                }
+            }
+
+
+            var secure = document.getElementsByName('secure');
+  for(i = 0; i < secure.length; i++) { 
+                if(secure[i].checked) {
+                  securityCount = securityCount + 1;
+               security = security + " , " + secure[i].value
+                console.log(secure[i].value)
+                }
+            }
+
+            var adminD = document.getElementsByName('adminD');
+  for(i = 0; i < adminD.length; i++) { 
+                if(adminD[i].checked) {
+                  adminDCount = adminDCount + 1;
+               admindash = admindash + " , " + adminD[i].value
+                console.log(adminD[i].value)
+                }
+            }
+
+            
+            var coreF = document.getElementsByName('coreF');
+  for(i = 0; i < coreF.length; i++) { 
+                if(coreF[i].checked) {
+                  coreFeaturesCount = coreFeaturesCount + 1;
+               coreFeatures = coreFeatures + " , " + coreF[i].value
+                console.log(coreF[i].value)
+                }
+            }
+
+
+            if(coreFeaturesCount == 8 && securityCount == 6 && adminDCount == 5){
+              firebase.firestore().collection("webappcalc").add({
+                name : name,
+                email : email,
+                coreFeatures : coreFeatures,
+                adminFeatures : admindash,
+                security : security,
+                design : design,
+                deployedon : deployedon,
+                testedon : testedon,
+                techstack : techstack,
+                industry : document.getElementById('industry').value,
+                price : "USD 20,000- USD 50,000",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              });
+            }
+
+            else if(coreFeaturesCount >= 4 && securityCount >= 3 && adminDCount >= 2){
+              firebase.firestore().collection("webappcalc").add({
+                name : name,
+                email : email,
+                coreFeatures : coreFeatures,
+                adminFeatures : admindash,
+                security : security,
+                design : design,
+                deployedon : deployedon,
+                testedon : testedon,
+                techstack : techstack,
+                industry : document.getElementById('industry').value,
+                price : "USD 10,000- USD 25,000",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              });
+            }
+
+            else if(coreFeaturesCount >= 6 && securityCount >= 4 && adminDCount >= 3){
+              firebase.firestore().collection("webappcalc").add({
+                name : name,
+                email : email,
+                coreFeatures : coreFeatures,
+                adminFeatures : admindash,
+                security : security,
+                design : design,
+                deployedon : deployedon,
+                testedon : testedon,
+                techstack : techstack,
+                industry : document.getElementById('industry').value,
+                price : "USD 15,000- USD 35,000",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              });
+            }
+            else {
+              alert("Please contact us. ")
+            }
+    }
+
+  </script>
+
+</head>
+
+
+<body>
+    <header class="main_menu">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+    
+                    
+                   
+                    <li class="nav-item">
+                            <a class="nav-link" href="service.html">Service</a>
+                        </li>
+                   
+                  
+                    <li class="nav-item active">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+  <div class="container">
+
+    <h2> <center>WEB APP COST CALCULATOR</center></h2>
+      
+<div style="height:20px"></div>
+      <div class="row">
+
+        
+        <div>
+          <h5>Your web application will serve to which industry
+          </h5>
+
+          <div class="form-group">
+    
+                <textarea class="form-control" id="industry" rows="1"></textarea>
+              </div>
+            </div>
+        <div class="dropdown col-sm">
+
+            <button style="border-radius: 30px; display:none" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id="App">
+              App 
+          </button>
+          <div style="display:none" class="dropdown-menu">
+            <p  class="dropdown-item" id="Hybrid" onclick="changeToHybrid()">Hybrid - Xamarin, Flutter and ReactNative</p>
+            <p class="dropdown-item" onclick="changeToAndroid()" id="Android">Android </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <h5> Your tech stack for the product will be            </h5>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id ="Target-Audience">
+              Select 
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" onclick = "changeToJAM() " id="JAM">Java Spring-Angular-MongoDB (JAM)                </p>
+            <p class="dropdown-item" href="#" onclick = "changeToMEAN() " id="MEAN">MongoDB-Express-Angular-NodeJS (MEAN)                </p>
+            <p class="dropdown-item" href="#" onclick = "changeToNRAS() " id="NRAS">.Net MVC-ReactJS/Angular-SQL (NRAS)                </p>
+
+        </div>
+        </div>
+
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+      <h5>Do you want assistance in UX design</h5>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Designs">
+              select
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" id="DesignYes" onclick="changeToDesignY()">Yes</p>
+            <p class="dropdown-item" href="#" id="DesignNo"  onclick="changeToDesignN()">No</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="projectDocs" style="display:none" class="row">
+        <h5>If No, then do you have a project requirement document </h5>
+        <div class="dropdown col-sm row">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Project">
+              Project Document
+       
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" onclick = "changeToProjectY()" id="Project-Yes">Yes</a>
+            <a class="dropdown-item" href="#" onclick = "changeToProjectN()" id="Project-No">No</a>
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+      <div>
+            <div class="dropdown col-sm">
+              </div>
+              <br/>
+                
+              <h5>Core Features must have for users</h5>
+    
+              <div>
+                <label class="container">Analytics
+                  <input type="checkbox" name="coreF" checked="checked" value="Analytics">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container"> Billing/Payments and Subscription management
+                  <input type="checkbox" name="coreF" value="Billing/Payments and Subscription management                  ">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Social Engagement
+                  <input type="checkbox" name="coreF" value="Social Engagement                  ">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Notifications- Email and SMS Desktop
+                  <input type="checkbox" name="coreF" value="Notifications- Email and SMS Desktop">
+                  <span class="checkmark"></span>
+                </label>
+    
+                <label class="container">User interaction - storing personal data, settings, dashboard 
+                    <input type="checkbox" name="coreF" value="User interaction - storing personal data, settings, dashboard">
+                    <span class="checkmark"></span>
+                  </label>
+    
+                  <label class="container">Login via social media
+                      <input type="checkbox" name="coreF" value="Login via social media
+                      ">
+                      <span class="checkmark"></span>
+                    </label>
+    
+                    <label class="container">File Upload and Download
+
+                        <input type="checkbox" name="coreF" value="File Upload and Download                        ">
+                        <span class="checkmark"></span>
+                      </label>
+
+                      <h5>OTHER REQUIRED FEATURES</h5>
+
+                      <div class="form-group">
+                
+                            <textarea class="form-control" id="otherCoreFeature" rows="1"></textarea>
+                          </div>
+              </div>
+              
+    
+           
+          </div>
+          <hr width="100%">
+
+
+          <div>
+                <div class="dropdown col-sm">
+                  </div>
+                  <br/>
+                    
+                  <h5>You need an Admin Dashboard that does</h5>
+        
+                  <div>
+                    <label class="container">Assign roles and permission
+                      <input type="checkbox" name="adminD" checked="checked" value="Assign roles and permission">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container"> Data filtering
+                      <input type="checkbox" name="adminD" value="Data filtering">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Track registered users
+                      <input type="checkbox" name="adminD" value="Track registered users">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Content management
+                      <input type="checkbox" name="adminD" value="Content management">
+                      <span class="checkmark"></span>
+                    </label>
+        
+                   
+        
+                      <label class="container">Login via social media
+                          <input type="checkbox" name="adminD" value="Login via social media
+                          ">
+                          <span class="checkmark"></span>
+                        </label>
+        
+                        <label class="container">File Upload and Download
+    
+                            <input type="checkbox" name="adminD" value="File Upload and Download                        ">
+                            <span class="checkmark"></span>
+                          </label>
+    
+                         
+                  </div>
+                  
+        
+               
+              </div>
+
+              <hr width="100%">
+
+
+              <div>
+                    <div class="dropdown col-sm">
+                      </div>
+                      <br/>
+                        
+                      <h5>Your web app security will be done with</h5>
+            
+                      <div>
+                        <label class="container">2 Factor authentication
+                          <input type="checkbox" name="secure" checked="checked" value="2 Factor authentication">
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="container">IP Blocker
+                          <input type="checkbox" name="secure" value="IP Blocker">
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Well written code and following framework standards
+                          <input type="checkbox" name="secure" value="Well written code and following framework standards">
+                          <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Password management
+                          <input type="checkbox" name="secure" value="Password management">
+                          <span class="checkmark"></span>
+                        </label>
+            
+                        <label class="container">Captcha 
+                            <input type="checkbox" name="secure" value="Captcha">
+                            <span class="checkmark"></span>
+                          </label>
+            
+                          <label class="container">GeoFencing
+                              <input type="checkbox" name="secure" value="GeoFencing">
+                              <span class="checkmark"></span>
+                            </label>
+             
+                      </div>
+                  </div>
+
+                  <hr width="100%">
+
+                  <div>
+                        <div class="dropdown col-sm">
+                          </div>
+                          <br/>
+                            
+                          <h5>Your web app must be tested on</h5>
+                
+                          <div>
+                            <label class="container">Google Chrome
+                              <input type="checkbox" name="test" checked="checked" value="Google Chrome">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Mozilla FireFox
+                              <input type="checkbox" name="test" value="Mozilla FireFox">
+                              <span class="checkmark"></span>
+                            </label>
+                            <label class="container">IE
+                              <input type="checkbox" name="test" value="IE">
+                              <span class="checkmark"></span>
+                            </label>
+                         
+                 
+                          </div>
+                      </div>
+
+                      <hr width="100%">
+
+                      <div class="row">
+                            <h5>Your app must be deployed  </h5>
+                            <div class="dropdown col-sm">
+                              
+                                <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                                  data-toggle="dropdown" id = "deploying">
+                                  Select
+                           
+                              </button>
+                    
+                              <div class="dropdown-menu">
+                                <a class="dropdown-item" onclick = "changeToOnSite()" id="OnSite">On Site</a>
+                                <a class="dropdown-item"  onclick = "changeToCloud()" id="cloud">Cloud</a>
+                              </div>
+                            </div>
+                          </div>
+    
+
+
+    
+
+
+     
+     
+
+      
+
+    
+
+      <hr width="100%">
+
+
+      <div>
+         
+
+
+          <div class="row">
+
+              <p> Thanks for answering all the questions. One last step, we promise, your quote will reach your inbox in
+                next 60 seconds</p> <br>
+            </div>
+            <br>
+      
+      
+           <p>NAME</p>
+                <textarea class="form-control" id="name" rows="1"></textarea>
+      
+             <p>EMAIL</p>
+                  <textarea class="form-control" id="email" rows="1"></textarea>
+      
+      
+
+
+      <br><br>
+      <label class="container"><b> I agree to share the information with GyanDevign Tech Services. All the data shared is for
+          official purpose and for the best interest of both parties. </b>
+          <input type="checkbox" name="additionalFeatures" value="Real Time Tracking (Google Maps)">
+          <span class="checkmark"></span>
+        </label>
+      <br> <br>
+      <center>
+
+        <button style="border-radius: 20px" align="middle" font color="white" type="button" class="btn btn-warning"
+          onclick="calcAndUpload()" data-toggle="dropdown">
+       <b>  <font size = "+1" >Submit </font>  </b> </center>
+      </font></button>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  <section class="footer-area section_padding">
+    <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+              <h4>ABOUT US</h4>
+              <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+             </div>
+
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#"><p>Website Design</p></a></li>
+            <li><a href="#"><p>Webapp Development</p></a></li>
+            <li><a href="#"><p>Mobile App Development</p></a></li>
+          </ul>
+        </div>
+       
+
+        <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#"><p>Blogs</p></a></li>
+            <li><a href="#"><p>Free resources</p></a></li>
+          </ul>
+        </div> -->
+
+      
+
+        <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+          <h4>India Address</h4>
+<p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+
+Mobile: +91 75078 35565<br/>
+Email: rahulg@devigntech.com<br/>
+</p>
+        </div>
+
+        <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+          <h4>Canada Address</h4>
+<p>Unit #100 5230 South Service Road <br/>
+  Burlington Ontario Canada L7L5K2<br/>
+  Mobile: +14164187463<br/>
+  Email: biz@devigntech.com<br/>
+  
+</p>
+        </div>
+
+
+      
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </section>
+</body>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/swiper.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- swiper js -->
+<script src="js/slick.min.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+
+<script src="jquery.2.min.js"></script>
+<script src="jquery.mixitup.min.js"></script>
+<script>
+    $('.containMix').mixItUp();
+</script>
+
+</html>

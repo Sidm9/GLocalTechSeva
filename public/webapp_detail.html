@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bizcon</title>
+    <title> Custom Software Development Company India | MEAN Stack Development</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,21 +23,120 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/glocaltechseva.appspot.com/o/Logo.png?alt=media&token=87defe3a-41c0-4fd7-a540-dcf26c0ded66" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devigntech.com/"/>
+    <meta property="og:title" content="Custom Software Development Company India | MEAN Stack Development" />
+    <meta property="og:description" content="GyanDevign Tech Services is a custom software application development company for startups and mature enterprises from India Our Java and MEAN stack developers spend 40 hours a minimum to understand your business objectives to  build a custom software solution for you.
+    "
+/>
     <!--ACCORDIAN FAQ SCRIPTS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+            authDomain: "glocaltechseva.firebaseapp.com",
+            databaseURL: "https://glocaltechseva.firebaseio.com",
+            projectId: "glocaltechseva",
+            storageBucket: "glocaltechseva.appspot.com",
+            messagingSenderId: "775906035664",
+            appId: "1:775906035664:web:238e3bef340bd103"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+
+        function speakToWebappExpert(){
+          var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+        modal.style.display = "none";
+      }
+         var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var subject = document.getElementById("subject").value;
+
+        if(name != null && email != null && message != null && subject != null){
+            firebase.firestore().collection("webappexpert").add({
+        name : name,
+        email : email, 
+        message : message,
+        subject : subject,
+        date: (new Date()).toString()
+    }).then(function(val){
+    modal.style.display = "block";
+  });;
+        }
+        else{
+            alert("All fields are required!!");
+        }
+        }
+        </script>
 </head>
 
 <body>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div style="background:#43A047" class="modal-content">
+          <span class="close">&times;</span>
+          <p style="color:white">Thanks for submiting your request. You will get an introduction email from us within 2 busines days</p>
+        </div>
+      
+      </div>
     <!--::header part start::-->
     <header class="main_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -53,29 +152,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">About</a>
                                 </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html">Blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Page
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="project.html">Project</a>
-                                        <a class="dropdown-item" href="project_details.html">Project Details</a>
-                                        <a class="dropdown-item" href="service.html">Services</a>
-                                        <a class="dropdown-item" href="elements.html">Elements</a>
-                                    </div>
-                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="service.html">Services</a>
+                              </li>
+                              
                                 <li class="nav-item active">
                                     <a class="nav-link" href="contact.html">Contact</a></li>
                                 </li>
@@ -86,7 +166,8 @@
             </div>
         </div>
     </header>
-    <section class="breadcrumb breadcrumb_bg">
+
+    <!-- <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -99,7 +180,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <img src="./img/webapp.jpg"/>
 
     <section class="service_part section_padding ">
         <div class="container">
@@ -129,8 +212,8 @@
                                     <b style="color: black">How: </b> Your technology partner will do a thorough inspection of the requirement and build blocks of successful web application practices.
                                     <br/>
                                     <br/>
-                                    <b style="color: black">We specialize in building full stack web applications for medium size brands,  and professionals who are charting their start up journey.
-                                    </b>
+                                    We specialize in building full stack web applications for medium size brands,  and professionals who are charting their start up journey. You will have stress free nights when you see  issues with bad UI design, error in code and poor project file structure disappearing within 3 weeks.
+                                    
                                     <br/><br/>
                                     <h2 style="color: #283593"> <b>
                                     Why Should I Outsource My Web Development Project to GlocalTechSeva 
@@ -156,8 +239,10 @@ We can help you build a web application that can be accessed easily, does not re
                                 </div>
                                 <br/><br/>
 
-<h1>PROCESS</h1><hr/>
-<b style="color: black ">Request for a Requirement Document</b><br/>
+<h1>WEB APPLICATION DEVELOPMENT PROCESS</h1><hr/>
+
+<img src="./img/webappprocess.jpg"  height="70%", width="70%"/>
+<!-- <b style="color: black ">Request for a Requirement Document</b><br/>
 ✔️ If the requirements are clear in your mind, it is a good practice to document that. Refine it and share with us. Unless you are clear, your partner will never be.
 <br/><br/>
 
@@ -190,7 +275,7 @@ We can help you build a web application that can be accessed easily, does not re
 <br/><br/>
 
 <b style="color: black">Deployment</b><br/>
-✔️ Your well-tested web application will be ready for deployment on cloud or on premises.
+✔️ Your well-tested web application will be ready for deployment on cloud or on premises. -->
 <br/><br/>
 
                                   </font>
@@ -215,20 +300,20 @@ We can help you build a web application that can be accessed easily, does not re
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-sm-3	col-md-3">
-                                                    <img src="./img/icon/android.svg" height="150" width="150"/> <br>
-                                                    <h6 style="align-content: center"> Android </h6> 
+                                                    <img src="./img/nodejs.png" height="150" width="150"/> <br>
+                                                    <h6 style="align-content: center"> NODE jS </h6> 
                                                 </div>
                                                 <div class="col-sm-3	col-md-3">
-                                                    <img src="./img/icon/Xamarin.svg" height="150" width="150"/> <br>
-                                                    <h6>Xamarin </h6>
+                                                    <img src="./img/java.png" height="150" width="150"/> <br>
+                                                    <h6>JAVA </h6>
                                                 </div>
                                                 <div class="col-sm-3	col-md-3">
-                                                    <img src="./img/icon/flutter_svg.jpg" height="150" width="150"/><br>
-                                                    <h6>Flutter</h6>
+                                                    <img src="./img/angular.png" height="150" width="150"/><br>
+                                                    <h6>ANGULAR</h6>
                                                 </div>
                                                 <div class="col-sm-3	col-md-3">
-                                                    <img src="./img/icon/REACT.svg" height="150" width="150"/><br>
-                                                    <h6>React Native</h6>
+                                                    <img src="./img/net.png" height="150" width="150"/><br>
+                                                    <h6>.NET</h6>
                                                 </div>
 
                                             </div>
@@ -242,7 +327,7 @@ We can help you build a web application that can be accessed easily, does not re
                                                     </div>
 
                                                     <div class="col-4">
-                                                        <button class="btn_1"> GET AN ESTIMATE</button>
+                                                        <a href = "./web-app-cost-calculator.html" class="btn_1"> GET AN ESTIMATE</a>
                                                         
                                                     </div>
 
@@ -287,16 +372,12 @@ We can help you build a web application that can be accessed easily, does not re
                                                           <div class="card-header">
                                                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
                                                               <h5>3. How do you solve the application security issues
-
+                                                                 
 
                                                             </h5>
                                                             </a>
                                                           </div>
-                                                          <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                                            <div class="card-body">
-                                                              <p><font size = "+1">Your app must score high on Usability and experience on every small/big tasks (e.g. navigations, execution, etc..) for users to be their go to solution. </p>
-                                                            </div>
-                                                          </div>
+                                                        
                                                         </div>
                                                         <div class="card">
                                                           <div class="card-header">
@@ -307,7 +388,10 @@ We can help you build a web application that can be accessed easily, does not re
                                                           </div>
                                                           <div id="collapseFour" class="collapse" data-parent="#accordion">
                                                             <div class="card-body">
-                                                              <p><font size = "+1"> What method do you follow for web application development
+                                                              <p><font size = "+1">We use waterfall-agile method for delivering all our projects.
+
+
+
                                                             </p>
                                                             </div>
                                                           </div>
@@ -315,7 +399,8 @@ We can help you build a web application that can be accessed easily, does not re
                                                         <div class="card">
                                                           <div class="card-header">
                                                             <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
-                                                              <h5> 5.  What method do you follow for web application development
+                                                              <h5> 5.  Can I hire a freelancer who can do the task at a cheaper price
+
                                                             </h5>
                                                             </a>
                                                           </div>
@@ -323,7 +408,8 @@ We can help you build a web application that can be accessed easily, does not re
                                                             <div class="card-body">
                                                               <p><font size = "+1">Sure. You have that option. The freelancing community has grown over the years. Do take into consideration, chealp does not translate to quality. If you are a business owner, do you want to be chasing freelancers on chat/emails? 
 
-                                                                Or work like a CEO and delegate tasks to a professional company who can offer great services at competitive prices.
+                                                                  Or work like a CEO and delegate tasks to a professional company who can offer great services at competitive prices.
+                                                                  
                                                                 </p>
                                                             </div>
                                                           </div>
@@ -394,178 +480,64 @@ We can help you build a web application that can be accessed easily, does not re
                                                                 </div>
                                                               </div>
                                                               
-                                                                 
+                                                                <br/>                                                                <br/>
+                                                                <br/>
+
+                                                                
+                                                              
                                                       </div>
 
-                                            <br>
-                                            <!--  <p>
-                                                <font size="+1">
-                                                    Is your web application suffering from slow load time and poorly
-                                                    written
-                                                    code? Or, you need a complete overhaul of the application, but not
-                                                    able
-                                                    to
-                                                    find a team who understands your problem?
+                                       
+                                   
 
-                                                    The situation is common with many application development houses who
-                                                    do
-                                                    not
-                                                    spend time with clients- that leads to software projects failure.
-
-                                                    You need a team that does thorough inspection of the requirement and
-                                                    build
-                                                    blocks of successful web application practices. We specialize in
-                                                    building
-                                                    full stack web applications for medium size brands (11-200), and
-                                                    professionals who are charting their start up journey.
-                                            </p>
-                                            <br>
-                                            <br>
-                                            <h3> Why Should I Outsource My Web Development Project to GlocalTechSeva
-                                            </h3>
-                                            <p>
-                                                <br>
-                                                <font size="+1">
-
-                                                    <img src="./img/icon/RED_DOT.svg" width="20" height="20"> You get
-                                                    quality advice on which platform is ideal for your business - Native
-                                                    or Hybrid.
-                                                    <br> <img src="./img/icon/GREEN_DOT.svg" width="20" height="20"> You
-                                                    get a recognizable product that focuses on core value proposition -
-                                                    ​80% of customers think that color increases brand awareness​,
-                                                    <br> <img src="./img/icon/BLUE_DOT.svg" width="20" height="20"> You
-                                                    get to reach out to the market faster and test your business model -
-                                                    get user/experts review and remove non worthy functions.
-                                                    <br> <img src="./img/icon/YELLOW_DOT.svg" width="20" height="20">
-                                                    You get a highly tested responsive mobile working across different
-                                                    devices- an unresponsive app can kill your business.
-                                                    <br> <img src="./img/icon/RED_DOT.svg" width="20" height="20"> You
-                                                    get priceless suggestion on building you app with MVP approach -
-                                                    your users will buy your product for the solution it offers, not for
-                                                    extra features.
-                                                    You do not want to be old school in business promotion and branding.
-                                                    Businesses worldwide are shifting from print ads to mobile realm.
-                                                    You can catch the train when you have a reliable mobile app
-                                                    development company at your side.
-
-                                                    We can build your mobile app that sells products to your customers
-                                                    and trends on the app store.
-                                                </font>
-                                            </p>
-                                            </font>
-
-                                            <br><br><br>
-                                            <h2>What Is the Process - we need to create a graphic something similar to
-                                                this
-                                            </h2>
-                                            <br><br><br><br>
-
-                                            <img src="./img/icon/wordpress.svg" align="middle" width="500"
-                                                height="500"><br><br><br>
-                                    </p>
-                                    <h2>FAQ</h2>
-                                    <p>
-                                            <br>
-                                            <h4> 1. What is your value proposition?</h4>     
-                                            <p>You can do a trial project with us to see if we are the right fit (for 3
-                                                days). We guarantee to deliver on agreed items. If you do not get the
-                                                results,
-                                                you have nothing to lose.</p>
-
-
-                                            <br>
-                                            <h4>2. What technologies you use for making websites</h4>
-                                            <p>We use WordPress/WooCommerce
-                                                and Magento for making static and dynamic websites.
-                                            </p>
-                                            <h4>
-                                                <br>3. Why Should I do business with you</h4>
-                                            <p>At this point of time, we really don't
-                                                know, if we are the right fit, but if you sign up for a value
-                                                proposition deal
-                                                to see the approach and outcome, we are sure, you will be able to
-                                                decide with clarity.</p>
-                                            <br>
-                                            <h4> 4. Do you offer support and maintenance post website launch</h4>
-                                            <p> Yes,We offer a 2 month free support after the launch. Post that, we
-                                                suggest to buy
-                                                our monthly or
-                                                annual maintenance package.</p>
-                                            <br>
-
-                                            <h4> 5. Are there any hidden charges</h4>
-                                            <p>No. On top of the project cost, you have to pay
-                                                for domain, hosting or any paid add ons needed for your website</p>
-                                            <br>
-                                            <h4> 6. How long does it take to build a website</h4>
-                                            <p>It can take from 2 weeks - 8 weeks
-                                                depending on the project complexity.</p>
-                                            <br>
-                                            <h4> 7. What is your engagement model For website creation, </h4>
-                                            <p> We work on fixed cost - milestone based approach. You pay in
-                                                installments based
-                                                on our commitment. That
-                                                way, it is transparent and you get to see live results.</p>
-                                            </font>
-                                            -->
-                                    </p>
-
-                                </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                    <div class="col-12">
-                      <h2 class="contact-title">Speak to our IT Consultant</h2>
-                    </div>
-                    <div class="col-lg-6">
-                      <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="form-group">
-                              
-                                <textarea style="border-width: 5px" class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Enter Message'></textarea>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input style="border-width: 5px" class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name'>
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <input style="border-width: 5px" class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address'>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <div class="form-group">
-                              <input style="border-width: 5px" class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group mt-3">
-                          <button type="submit" class="button button-contactForm btn_4">Send Message</button>
-                        </div>
-                      </form>
-                    </div>
-                    
-                  </div>
-                </div>
-      
-              </div>
-
-        </div>
-
-       
-
-        </div>
+                        
+        
+                                                      <div class="row">
+                                                        <div class="col-12">
+                                                          <h2 class="contact-title">Speak to our Web App Consultant</h2>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                          <div class="form-contact contact_form"  id="contactForm" novalidate="novalidate">
+                                                            <div class="row">
+                                                              <div class="col-12">
+                                                                <div class="form-group">
+                                                                  
+                                                                    <textarea style="border-width: 5px" class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Enter Message'></textarea>
+                                                                </div>
+                                                              </div>
+                                                              <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                  <input style="border-width: 5px" class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name'>
+                                                                </div>
+                                                              </div>
+                                                              <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                  <input style="border-width: 5px" class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address'>
+                                                                </div>
+                                                              </div>
+                                                              <div class="col-12">
+                                                                <div class="form-group">
+                                                                  <input style="border-width: 5px" class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group mt-3">
+                                                              <button onclick="speakToWebappExpert();" class="button button-contactForm btn_4">Send Message</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        
+                                                      </div>
+        
         <div class="hero-app-7 custom-animation"><img src="img/animate_icon/icon_1.png" alt=""></div>
         <div class="hero-app-8 custom-animation2"><img src="img/animate_icon/icon_2.png" alt=""></div>
         <div class="hero-app-6 custom-animation3"><img src="img/animate_icon/icon_3.png" alt=""></div>
     </section>
 
+    
+    
 </body>
+
+
 
 </html>

@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <title>WEB DESIGN COST CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style>
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      </style>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+        authDomain: "glocaltechseva.firebaseapp.com",
+        databaseURL: "https://glocaltechseva.firebaseio.com",
+        projectId: "glocaltechseva",
+        storageBucket: "glocaltechseva.appspot.com",
+        messagingSenderId: "775906035664",
+        appId: "1:775906035664:web:238e3bef340bd103"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+  <script>
+
+
+    var about = "";
+    var cms = "";
+    var registeredDomain = "";
+    var secure = "";
+    var theme = "";
+    var screens = 0;
+    var signup = "";
+    var design = "";
+    var paymentIntegration = "";
+    var socialMediaIntegration = "";
+    var domain = "";
+    var otherFeatures = "";
+    var otherFeaturesCount = 0;
+    var CRMs = "";
+    var signups="";
+  
+    function changeTo(id) {
+      
+      var option1 = document.getElementById("Android").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+    }
+
+    function changeToAndroid(){
+      cms = "SHOPIFY"
+      var option1 = document.getElementById("Android").innerHTML;
+      document.getElementById("cms").innerHTML = option1;
+    }
+
+    function changeToHybrid(id) {
+      cms = "WORDPRESS"
+      var option1 = document.getElementById("Hybrid").innerHTML;
+      document.getElementById("cms").innerHTML = option1;
+    }
+
+    function changeToJAM (id) {
+      var option = document.getElementById("JAM").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToMEAN (id) {
+      var option = document.getElementById("MEAN").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToNRAS(id){
+        var option = document.getElementById("NRAS").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToDesignY (id) {
+      var option = document.getElementById("DesignYes").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+      design = "Yes"
+
+    //  document.getElementById("projectDocs").style.display = "none";
+
+    }
+
+    function changeToDesignN (id) {
+      var option = document.getElementById("DesignNo").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+      design = "No";
+    //  document.getElementById("projectDocs").style.display = "inline";
+
+    }
+
+    function changeToProjectY (id) {
+      var option = document.getElementById("Project-Yes").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+   //   document.getElementById("shareComp").style.display = "none";
+
+
+    }
+
+    function changeToProjectN (id) {
+      var option = document.getElementById("Project-No").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+    //  document.getElementById("shareComp").style.display = "inline";
+
+    }
+ 
+    function changeToScreenA (id) {
+      screens = 1
+      var option = document.getElementById("5-10").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenB (id) {
+      screens = 2;
+      var option = document.getElementById("10-20").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenC (id) {
+      screens = 3;
+      var option = document.getElementById("20-40").innerHTML;
+      document.getElementById("Screen").innerHTML  = option;
+    }
+
+
+    function changeToFirebase(id){
+      var option = document.getElementById("gf").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAmazon(id){
+      var option = document.getElementById("aws").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAzure(id){
+      var option = document.getElementById("ma").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToInternalStorage(id){
+      var option = document.getElementById("mes").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function submit() {
+
+    }
+
+    function changeToOnSite(){
+    var option = document.getElementById("OnSite").innerHTML;
+      document.getElementById("deploying").innerHTML  = option;
+    }
+
+    function changeToCloud(){
+        var option = document.getElementById("cloud").innerHTML;
+      document.getElementById("deploying").innerHTML  = option;
+    }
+
+    function changeToBlog(id){
+      about = "Blog";
+    var option = document.getElementById("Blog").innerHTML;
+      document.getElementById("App").innerHTML  = option;
+    }
+
+    function changeToSocialNetworking(id){
+      about = "Social-Networking"
+    var option = document.getElementById("Social-Networking").innerHTML;
+      document.getElementById("App").innerHTML  = option;
+    }
+
+    function changeToBusiness(id){
+      about = "Business"
+    var option = document.getElementById("Business").innerHTML;
+      document.getElementById("App").innerHTML  = option;
+    }
+
+    function changeToEcommerce(id){
+      about = "Ecommerce"
+    var option = document.getElementById("Ecommerce").innerHTML;
+      document.getElementById("App").innerHTML  = option;
+    }
+
+    function changeToDomainToYes(id){
+      domain = "Yes"
+        var option = document.getElementById("yes").innerHTML;
+      document.getElementById("domainornot").innerHTML  = option;
+    }
+
+    function changeDomainToNo(id){
+      domain = "No"
+        var option = document.getElementById("no").innerHTML;
+      document.getElementById("domainornot").innerHTML  = option;
+    }
+    function changeToBasicSSL(id){
+      secure = "basicSSL";
+        var option = document.getElementById("basicssl").innerHTML;
+      document.getElementById("secure").innerHTML  = option;
+    }
+
+    function changeToNotImportant(id){
+      secure = "No SSL"
+        var option = document.getElementById("nossl").innerHTML;
+      document.getElementById("secure").innerHTML  = option;
+    }
+
+    function changeToPowerful(id){
+      secure = "Powerful SSL"
+        var option = document.getElementById("powerfulssl").innerHTML;
+      document.getElementById("secure").innerHTML  = option;
+    }
+    
+    function changeThemeToFree(id){
+      theme = "Free";
+        var option = document.getElementById("Free").innerHTML;
+      document.getElementById("theme").innerHTML  = option;
+    }
+
+    function changeThemeToNew(id){
+      theme = "new"
+        var option = document.getElementById("New").innerHTML;
+      document.getElementById("theme").innerHTML  = option;
+    }
+
+    function changeThemeToCustom(id){
+      theme = "Custom"
+        var option = document.getElementById("custom").innerHTML;
+      document.getElementById("theme").innerHTML  = option;
+    }
+
+    function changeSignupToYes(id){
+      signup = "yes"
+        var option = document.getElementById("SingupYes").innerHTML;
+      document.getElementById("signup").innerHTML  = option;
+      document.getElementById("signupdet").style.display  = "inline";
+
+
+    }
+
+    function changeSignupToNo(id){
+      signup = "No";
+        var option = document.getElementById("SignupNo").innerHTML;
+      document.getElementById("signup").innerHTML  = option;
+      document.getElementById("signupdet").style.display  = "none";
+
+    }
+
+    function changePayToYes(id){
+      paymentIntegration = "yes"
+        var option = document.getElementById("PayYes").innerHTML;
+      document.getElementById("payment").innerHTML  = option;
+    }
+
+    function changePayToNo(id){
+      paymentIntegration = "No"
+        var option = document.getElementById("PayNo").innerHTML;
+      document.getElementById("payment").innerHTML  = option;
+    }
+
+    function changeIntegrationToYes(id){
+      socialMediaIntegration = "yes"
+        var option = document.getElementById("integrationYes").innerHTML;
+      document.getElementById("integration").innerHTML  = option;
+      document.getElementById("integrationDet").style.display="block";
+
+
+    }
+
+    function changeIntegrationToNo(id){
+      socialMediaIntegration = "no"
+        var option = document.getElementById("integrationNo").innerHTML;
+      document.getElementById("integration").innerHTML  = option;
+      document.getElementById("integrationDet").style.display="none";
+
+    }
+
+
+    function calcAndUpload(){
+      var otherF = document.getElementsByName('otherF');
+  for(i = 0; i < otherF.length; i++) { 
+                if(otherF[i].checked) {
+                  otherFeaturesCount = otherFeaturesCount + 1;
+               otherFeatures = otherFeatures + " , " + otherF[i].value
+                console.log(otherF[i].value)
+                }
+            }
+    
+
+    var CRM = document.getElementsByName('CRM');
+  for(i = 0; i < CRM.length; i++) { 
+                if(CRM[i].checked) {
+               //   otherFeaturesCount = otherFeaturesCount + 1;
+               CRMs = CRMs + " , " + CRM[i].value
+                console.log(CRM[i].value)
+                }
+            }
+
+            var signupF = document.getElementsByName('signupF');
+  for(i = 0; i < signupF.length; i++) { 
+                if(signupF[i].checked) {
+                //  otherFeaturesCount = otherFeaturesCount + 1;
+               signups = signups + " , " + signupF[i].value
+                console.log(signupF[i].value)
+                }
+            }
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var integrationOther = document.getElementById("integrationOther").value;
+
+
+            console.log(signups)
+            console.log(CRMs);
+            console.log(otherFeatures);
+            if(screens ==1 ){
+              firebase.firestore().collection("websiteCalc").add({
+                name : name,
+                email : email,
+                customChoiceSocialMediaIntegration : integrationOther,
+                signupOptions : signups,
+                features : otherFeatures,
+                design : design,
+                paymentIntegration : paymentIntegration,
+                screens : "5-10",
+                domain:domain,
+                cms : cms,
+                about : about,
+                theme:theme,
+                price : "400-1200",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+            }
+
+           else if(screens==2 && about=="Business"){
+              firebase.firestore().collection("websiteCalc").add({
+                name : name,
+                email : email,
+                customChoiceSocialMediaIntegration : integrationOther,
+                signupOptions : signups,
+                features : otherFeatures,
+                design : design,
+                paymentIntegration : paymentIntegration,
+                screens : "10-20",
+                domain:domain,
+                cms : cms,
+                about : about,
+                theme:theme,  
+                price : "600-1800",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+            }
+
+           else if(screens==2 && about=="Ecommerce"){
+              firebase.firestore().collection("websiteCalc").add({
+                name : name,
+                email : email,
+                customChoiceSocialMediaIntegration : integrationOther,
+                signupOptions : signups,
+                features : otherFeatures,
+                design : design,
+                paymentIntegration : paymentIntegration,
+                screens : "10-20",
+                domain:domain,
+                cms : cms,
+                about : about,
+                theme:theme,  
+                price : "1500-4500",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+            }
+
+            else if(screens==2 && about=="Social Networking" && paymentIntegration=="yes"){
+              firebase.firestore().collection("websiteCalc").add({
+                name : name,
+                email : email,
+                customChoiceSocialMediaIntegration : integrationOther,
+                signupOptions : signups,
+                features : otherFeatures,
+                design : design,
+                paymentIntegration : paymentIntegration,
+                screens : "10-20",
+                domain:domain,
+                cms : cms,
+                about : about,
+                theme:theme,  
+                price : "2000-3000",
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+            }
+
+            else {
+              alert("Please contact us. ")
+            }
+    
+
+
+
+          }
+
+  </script>
+
+</head>
+
+
+<body>
+
+    <header class="main_menu">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+    
+                    
+                   
+                    <li class="nav-item">
+                            <a class="nav-link" href="service.html">Service</a>
+                        </li>
+                   
+                  
+                    <li class="nav-item active">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+  <div class="container">
+
+    <h2> <center>WEB DESIGN COST CALCULATOR</center></h2>
+    <div style="height:20px"></div>
+      
+      <div class="row">
+
+        <p>What is your website about</p>
+        <div class="dropdown col-sm">
+
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id="App">
+              App 
+          </button>
+          <div class="dropdown-menu">
+            <p  class="dropdown-item" id="Blog" onclick="changeToBlog()">Blog</p>
+            <p class="dropdown-item" onclick="changeToSocialNetworking()" id="Social-Networking">Social Networking</p>
+            <p class="dropdown-item" onclick="changeToBusiness()" id="Business">Business</p>
+            <p class="dropdown-item" onclick="changeToEcommerce()" id="Ecommerce">Ecommerce</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+        
+          
+         
+              
+
+
+
+          <p>Which CMS platform are you looking for the new website to be built on?</p>
+          <div class="dropdown col-sm">
+  
+              <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                data-toggle="dropdown" id="cms">
+                App 
+            </button>
+            <div class="dropdown-menu">
+              <p  class="dropdown-item" id="Hybrid" onclick="changeToHybrid()">WORDPRESS</p>
+              <p class="dropdown-item" onclick="changeToAndroid()" id="Android">SHOPIFY</p>
+            </div>
+          </div>
+        </div>
+       
+
+
+
+      <hr width="100%">
+
+
+      <div class="row">
+
+            <p>Have you registered your domain and hosting service</p>
+            <div class="dropdown col-sm">
+    
+                <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                  data-toggle="dropdown" id="domainornot">
+                  Select 
+              </button>
+              <div class="dropdown-menu">
+                <p  class="dropdown-item" id="yes" onclick="changeToDomainToYes()">Yes</p>
+                <p class="dropdown-item" onclick="changeDomainToNo()" id="no">No</p>
+              </div>
+            </div>
+          </div>    
+    
+          <hr width="100%">
+     
+
+      <hr width="100%">
+      <div class="row">
+        <p> How do you want to secure your site            </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id ="secure">
+              Select 
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" onclick = "changeToPowerful() " id="powerfulssl">Need complete powerful security enabled
+                </p>
+            <p class="dropdown-item" href="#" onclick = "changeToBasicSSL() " id="basicssl">Basic SSL certificate               </p>
+            <p class="dropdown-item" href="#" onclick = "changeToNotImportant() " id="nossl">Not that important                </p>
+
+        </div>
+        </div>
+
+      </div>
+
+      <hr width="100%">
+      <div class="row">
+        <p> What is your Design Theme Preference         </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id ="theme">
+              Select 
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" onclick = "changeThemeToFree() " id="Free">Free
+                </p>
+            <p class="dropdown-item" href="#" onclick = "changeThemeToNew() " id="New">New             </p>
+            <p class="dropdown-item" href="#" onclick = "changeThemeToCustom() " id="custom">Custom               </p>
+
+        </div>
+        </div>
+
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+            <p>How many approximate number of pages do you think the new website will have?</p>
+            <div class="dropdown col-sm">
+    
+              
+                <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                  data-toggle="dropdown" id = "Screen">
+                  Number of Screens.
+              
+              </button>
+    
+              <div class="dropdown-menu">
+                <a class="dropdown-item"  onclick = "changeToScreenA()" id="5-10"> 5-10 </a>
+                <a class="dropdown-item"  onclick = "changeToScreenB()" id="10-20"> 10-20</a>
+                <a class="dropdown-item"  onclick = "changeToScreenC()" id="20-40"> 20-40</a>
+              </div>
+    
+            </div>
+          </div>
+
+      <hr width="100%">
+
+      <hr width="100%">
+      <div class="row">
+        <p> Will there be any sign up needed for your visitors
+            </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id ="signup">
+              Select 
+          </button>
+          <div class="dropdown-menu">
+            <p class="dropdown-item"  onclick = "changeSignupToYes() " id="SingupYes">Yes
+                </p>
+            <p class="dropdown-item" onclick = "changeSignupToNo() " id="SignupNo">No             </p>
+
+        </div>
+       
+        </div>
+
+       
+
+      </div>
+
+      <div id="signupdet" style="display:none">
+            <label class="container">Email and password
+              <input type="checkbox" name="signupF" checked="checked" value="Email and password">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"> Social Media
+              <input type="checkbox" name="signupF" value="Social Media">
+              <span class="checkmark"></span>
+            </label>
+        </div> 
+
+       
+        <br/>
+
+        <hr width="100%">
+
+
+      <div class="row">
+        <p>Do you want assistance in UX design</p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Designs">
+              select
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <p class="dropdown-item" href="#" id="DesignYes" onclick="changeToDesignY()">Yes</p>
+            <p class="dropdown-item" href="#" id="DesignNo"  onclick="changeToDesignN()">No</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="projectDocs" style="display:none" class="row">
+        <p>If No, then do you have a project requirement document </p>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Project">
+              Project Document
+       
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" onclick = "changeToProjectY()" id="Project-Yes">Yes</a>
+            <a class="dropdown-item" href="#" onclick = "changeToProjectN()" id="Project-No">No</a>
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+      <div class="row">
+            <p>Do you need any Payment integration (say PayPal or Stripe)                </p>
+            <div class="dropdown col-sm">
+              
+                <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                  data-toggle="dropdown" id = "payment">
+                  select
+              
+              </button>
+    
+              <div class="dropdown-menu">
+                <p class="dropdown-item" href="#" id="PayYes" onclick="changePayToYes()">Yes</p>
+                <p class="dropdown-item" href="#" id="PayNo"  onclick="changePayToNo()">No</p>
+              </div>
+            </div>
+          </div>
+
+          <hr width="100%">
+
+          <div class="row">
+                <p> Do you need any integration with Social Media or CRM
+                    </p>
+                <div class="dropdown col-sm">
+                  
+                    <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                      data-toggle="dropdown" id ="integration">
+                      Select 
+                  </button>
+                  <div class="dropdown-menu">
+                    <p class="dropdown-item"  onclick = "changeIntegrationToYes() " id="integrationYes">Yes
+                        </p>
+                    <p class="dropdown-item" onclick = "changeIntegrationToNo() " id="integrationNo">No</p>
+        
+                </div>
+               
+                </div>
+        
+               
+        
+              </div>
+              <div id="integrationDet" style="display:none">
+                    <label class="container">Zoho
+                      <input type="checkbox" name="CRM" checked="checked" value="Zoho">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">SalesForce
+                      <input type="checkbox" name="CRM" value="SalesForce">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Custom CRM
+                            <input type="checkbox" name="CRM" value="Custom CRM">
+                            <span class="checkmark"></span>
+                          </label>
+
+                          <p>CUSTOM CHOICE</p>
+                
+                          <div class="form-group">
+                
+                                <textarea class="form-control" id="integrationOther" rows="1"></textarea>
+                              </div>
+                    
+                </div> 
+
+
+                <hr width="100%">
+
+      <div>
+            <div class="dropdown col-sm">
+              </div>
+              <br/>
+                
+              <p>What other features do you want                </p>
+    
+              <div>
+                <label class="container">Online Chat
+                  <input type="checkbox" name="otherF" value="Online Chat">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Review system
+                  <input type="checkbox" name="otherF" value="Review system">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Search
+                  <input type="checkbox" name="otherF" value="Search">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Notification Control
+                  <input type="checkbox" name="otherF" value="Notification Control">
+                  <span class="checkmark"></span>
+                </label>
+    
+              
+
+                    
+              </div>
+              
+    
+           
+          </div>
+         
+
+
+                
+
+                      <hr width="100%">
+
+                   
+
+
+      <div>
+         
+
+
+      <div class="row">
+
+        <p> Thanks for answering all the questions. One last step, we promise, your quote will reach your inbox in
+          next 60 seconds</p> <br>
+      </div>
+      <br>
+
+
+     <p>NAME</p>
+          <textarea class="form-control" id="name" rows="1"></textarea>
+
+       <p>EMAIL</p>
+            <textarea class="form-control" id="email" rows="1"></textarea>
+
+
+      <br><br>
+      <label class="container"><b> I agree to share the information with GyanDevign Tech Services. All the data shared is for
+          official purpose and for the best interest of both parties. </b>
+          <input id ="agree"type="checkbox" name="additionalFeatures" value="Real Time Tracking (Google Maps)">
+          <span class="checkmark"></span>
+        </label>
+      <br> <br>
+      <center>
+
+        <button style="border-radius: 20px" align="middle" font color="white" type="button" class="btn btn-warning"
+          onclick="calcAndUpload()" data-toggle="dropdown">
+       <b>  <font size = "+1" >Submit </font>  </b> </center>
+      </font></button>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  <section class="footer-area section_padding">
+    <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+              <h4>ABOUT US</h4>
+              <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+             </div>
+
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#"><p>Website Design</p></a></li>
+            <li><a href="#"><p>Webapp Development</p></a></li>
+            <li><a href="#"><p>Mobile App Development</p></a></li>
+          </ul>
+        </div>
+       
+
+        <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#"><p>Blogs</p></a></li>
+            <li><a href="#"><p>Free resources</p></a></li>
+          </ul>
+        </div> -->
+
+      
+
+        <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+          <h4>India Address</h4>
+<p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+
+Mobile: +91 75078 35565<br/>
+Email: rahulg@devigntech.com<br/>
+</p>
+        </div>
+
+        <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+          <h4>Canada Address</h4>
+<p>Unit #100 5230 South Service Road <br/>
+  Burlington Ontario Canada L7L5K2<br/>
+  Mobile: +14164187463<br/>
+  Email: biz@devigntech.com<br/>
+  
+</p>
+        </div>
+
+
+      
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </section>
+</body>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/swiper.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- swiper js -->
+<script src="js/slick.min.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+
+<script src="jquery.2.min.js"></script>
+<script src="jquery.mixitup.min.js"></script>
+<script>
+    $('.containMix').mixItUp();
+</script>
+
+</html>

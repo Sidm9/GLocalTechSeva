@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bizcon</title>
+    <title>Web & Mobile App Consultants India | GyanDevign Tech Services</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,6 +23,59 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/glocaltechseva.appspot.com/o/Logo.png?alt=media&token=87defe3a-41c0-4fd7-a540-dcf26c0ded66" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devigntech.com/about.html"/>
+    <meta property="og:title" content="Web & Mobile App Consultants India | GyanDevign Tech Services" />
+    <meta property="og:description" content="Create your next ecommerce websites with WordPress and Shopify; develop MVP for your mobile apps with Flutter and ReactNative in 4 weeks.Don’t worry about past sorrows of outsourcing, we only work on strict milestone based payment approach. You give us Trust and you get Treasure.
+    "
+/>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+            authDomain: "glocaltechseva.firebaseapp.com",
+            databaseURL: "https://glocaltechseva.firebaseio.com",
+            projectId: "glocaltechseva",
+            storageBucket: "glocaltechseva.appspot.com",
+            messagingSenderId: "775906035664",
+            appId: "1:775906035664:web:238e3bef340bd103"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+ 
+        
+        function subscribe(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            if(name != null && email != null){
+                firebase.firestore().collection("newsletter").add({
+                name : name,
+                email : email,
+                date: (new Date()).toString(),
+            }).then(function(val){
+                alert("Congrats, you are subscribed to our newsletter")
+            })
+            }
+
+            else{
+                alert("All fields are required !");
+            }
+           
+        }
+</script>
 </head>
 
 <body>
@@ -32,7 +85,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -49,28 +102,14 @@
                                     <a class="nav-link" href="about.html">About</a>
                                 </li>
 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html">Blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Page
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="project.html">Project</a>
-                                        <a class="dropdown-item" href="project_details.html">Project Details</a>
-                                        <a class="dropdown-item" href="service.html">Services</a>
-                                        <a class="dropdown-item" href="elements.html">Elements</a>
-                                    </div>
-                                </li>
+                              
+                                   
+                                    <li class="nav-item">
+                                            <a class="nav-link" href="service.html">Services</a>
+                                        </li>
+                                   
+                                        
+                                  
                                 <li class="nav-item active">
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
@@ -84,7 +123,7 @@
     <!-- Header part end-->
 
     <!--::breadcrumb part start::-->
-    <section class="breadcrumb breadcrumb_bg">
+    <!-- <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -97,7 +136,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <img src="./img/aboutus.jpg"></img>
     <!--::breadcrumb part start::-->
 
     <!-- about part start-->
@@ -157,8 +198,8 @@
 
                         <br>
 
-                    <h2>How GlocalTechSeva started in August 2019 </h2>
-                    <p><font size="+1">GlocalTechSeva LLP was born (month) to serve small businesses and start up founders reach out to the market fast. Let your technology partner focus on creating a meaningful product and you focus on customer acquisition. 
+                    <h2>How GyanDevign Tech Services started in September 2019 </h2>
+                    <p><font size="+1">GyanDevign Tech Services started with the objective to serve small businesses and start up founders reach out to the market fast. Let your technology partner focus on creating a meaningful product and you focus on customer acquisition. 
 
                         We understand your pain points - not finding skilled workforce or unable to adapt to changing technology landscape. You are not alone. The situation is scary, but working with the right people who have a mix of business and technology sense can help you grow your business.
                         
@@ -320,19 +361,27 @@
       
 
         <div class="row">
-            <div class="col-3">
-
+            <div class="col-6">
+                <img src="./img/pune.png"/>
             </div>
 
-            <div class="col-7">
+            <div class="col-6">
                 <p>
                     <font size="+1">
                         We are located in western IT hub of India - Pune. It is about 3 hours from Mumbai. <br/>
                         The city is known for its rich Maratha culture, fabulous weather, authentic food, access to tech talent and strong education ecosystem- often called the Oxford of the East. <br/>
                         Do visit here for a personal or a professional trip. You won't be disappointed.<br/>
+                        <br/>
+                        <br/>
+
+                        In case you want to speak to someone in North America, We have our partner office in Ontario, Canada.
 
                     </font>
+
+
                 </p>
+                <br/><br/><br/>
+                <img src="./img/aboutussecond.png"/>
             </div>
 
         </div>
@@ -353,31 +402,61 @@
         <div class="hero-app-8 custom-animation3"><img src="img/animate_icon/icon_9.png" alt=""></div>
     </section>
     <!--::blog_part start::-->
-    <h1 style="text-align: center;">Founders Vision Statement</h1><br/>
     <div class="container">
-    <div class="col-6">
+            <h1>Founders Vision Statement</h1><br/>
+
+    <div class="col-10">
         <p>
             <font size="+1">
-                “ I started the company with the objective of helping clients on every aspect of life- it's not restricted to business. We have common personality traits that gets hidden often running after excel sheets and deliverables. I have worked in different roles as customer support representative, technical writing and marketing for IT service companies. 
+                   
+                <p>
+                        “I started the company with the objective of helping startups and mature enterprises on every aspect of life- it's not restricted to business. We all have common personality traits that gets hidden often running after excel sheets and deliverables. 
 
-                I personally like eating healthy food, doing meditation, love sports and watch action thrillers.
-
-                One thing, I have seen numerous times, is the lack of empathy for employees and clients. When you are doing business, it runs on #1 thing called trust. Relationships are developed over time. You have to earn it. When you solve your clients  pressing need, you become a partner, not just another vendor. 
-
-                I never overstate our capabilities and miscommit. If you are direct and honest, people will copy your positive traits.
-
-                I named the company GlocalTechSeva for reasons
+                          <br/></br>
 
 
-                GLOCAL- helping local and global businesses 
+               
+                        Often over the top statements from founders on their profile to attract business is a big NO for me. I know the reality- a prolonged pain process. Clients chasing one department to another with poor communication hierarchy.
+                        <br/></br>
+                   
+                        When your systems are broken, delivery will be disastrous.
 
+                        <br/></br>
+                        I have worked in different roles as customer support representative, technical writing and marketing for IT service companies. 
+                        <br/></br>
+                        Some of the companies that I have worked in the past: Patni Computers (now CapeGemini), GroupDocs, Convergys and Invimatic Solutions.
+                        <br/></br>
+                        One thing, I have seen numerous times, is the lack of empathy for employees and clients. When you are doing business, it runs on #1 thing called trust. Relationships are developed over time. You have to earn it. When you solve your clients  pressing need, you become a partner, not just another vendor. 
 
-                TECH- Technology is the focal point for next IT revolution
+                        <br/></br>
+                        I never overstate our capabilities and miscommit. If you are direct and honest, people will copy your positive traits.
+                        <br/></br>
 
+                
+                        I personally like eating healthy food, doing meditation, love sports and watch action thrillers.
+                        <br/><br/>
+                        I named the company GyanDevign Tech Services for reasons
+                        <br/><br/>
+                        <b>GYAN-</b> Meaning Knowledge; Sharing knowledge is gaining knowledge
+                        <br/>
 
-                SEVA- Meaning service, when you have a service intent in every action, you are bound to succeed in every facet of life. 
+                        <b>DEVIGN-</b> Through DEVelopment and desIGN, we will help you create a solid digital footprint
+                        <br/>
+             
 
-                After all serving humans is serving the Almighty 
+               <b>TECH SERVICES-</b>  Meaning seva in sanskrit, when you have a service intent in every action, you are bound to succeed in every facet of life. 
+
+After all serving humans is serving the Almighty 
+
+<br/><br/>
+<p class="text-right">
+   <b>
+    <span style="font-size: 30px"> - Rahul Gulati</span> <br/>
+    Founder and Chief Business Strategist<br/>
+    
+    <div class="text-right" onclick="loadlinkedin()"><img src="./img/linkedin.png" height="40px" width="40px"></img></div
+   </b> 
+</p>
 
             </font>
         </p>
@@ -386,10 +465,15 @@
 </div>
 </div>
 
+<div class="container">
+    <hr>
+
+</div>
+
 <section class="about_part single_padding_top">
         <div class="container">
             <h1>Do You Want professional help in developing your website or an application</h1><br/>
-            <p> <font size="+1">Fill the contact us(link( form or o write an email to …..., that sends your message to us the same way. </font></p>
+            <p> <font size="+1">Fill the <a href="./contact.html">Contact Us</a> form or write an email to <b>biz@devigntech.com</b> that sends your message to us the same way. </font></p>
 
         </div>
 
@@ -400,29 +484,56 @@
             <div class="row align-items-center justify-content-end">
 
                 <div class="col-md-12 offset-xl-1 col-xl-12" style="background-color:#F8F6F6;">
-                    <div class="about_text">
-                        <h2>Is Your Poorly Designed Website Or Application <br> Turning Away Customers ? Let's discuss
-                        </h2>
-                        <div class="form-wrap" id="mc_embed_signup">
-                            <div class="form-inline">
-                                    <input id="email" class="form-control" name="EMAIL" placeholder="Your Name"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name '"
-                                    required="" type="name">
-                                    <div style="width: 100px"></div>
-                                <input id="email" class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                    required="" type="email">
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
-                                        type="text">
-                                </div>
+                    <div class="row">
+                           
+                        <div class="col-8">
+                                <div class="about_text">
+                                        <h2>Get the latest tips and advice to grow your small business or startup.
+                                            </h2>
+                                        <p>Are you tired of those self promotional emails and boring Newsletters?</p>
+                                        <p>Do you really want to build a terrific online presence through your website ?
+                                            <br/>                                            <br/>
 
-                                <div class="info"></div>
-                            </div>
+                                            Then you are at the right place, you must signup for the weekly updates
+                                            <br/><br/>
+                                        </p>
+                
+                                       
+                                    </div>
                         </div>
-                        <button onclick="sub()" href="#" class="btn_2">DOWNLOAD</button>
+
+                        <div style="padding: 20px" class="col-md-4 col-sm-0">
+                                <img src="./img/aboutuscontactus.jpg"/>
+                        </div>
+
+                        
                     </div>
+
+                      <div style="padding: 20px" class="form-wrap" id="mc_embed_signup">
+                                            <div class="form-inline">
+                                                    <input id="name" class="form-control" name="EMAIL" placeholder="Your Name"
+                                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name '"
+                                                    required="" type="name">
+                                                    <div style="width: 100px"></div>
+                                                <input id="email" class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                                    required="" type="email">
+                                                    <div style="width: 300px"></div>
+                
+                                                    <button style="padding-left: 50px; padding-right: 50px" onclick="subscribe()" href="#" class="btn btn-success">SIGNUP</button>
+                
+                                                <div style="position: absolute; left: -5000px;">
+                                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                                        type="text">
+                                                </div>
+                
+                                                <div class="info"></div>
+                                            </div>
+                                        </div> 
+               
                 </div>
+
+
             </div>
         </div>
         <div class="hero-app-1 custom-animation"><img src="img/animate_icon/icon_1.png" alt=""></div>
@@ -432,86 +543,93 @@
 
     <!-- footer part start-->
     <section class="footer-area section_padding">
-        <div class="container">
-            <div class="row">
+            <div class="container-fluid">
+              <div class="row">
+        
+                  <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+                      <h4>ABOUT US</h4>
+                      <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+                     </div>
+        
                 <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Top Products</h4>
-                    <ul>
-                        <li><a href="#">Managed Website</a></li>
-                        <li><a href="#">Manage Reputation</a></li>
-                        <li><a href="#">Power Tools</a></li>
-                        <li><a href="#">Marketing Service</a></li>
-                    </ul>
+                  <h4>Services</h4>
+                  <ul>
+                    <li><a href="#"><p>Website Design</p></a></li>
+                    <li><a href="#"><p>Webapp Development</p></a></li>
+                    <li><a href="#"><p>Mobile App Development</p></a></li>
+                  </ul>
                 </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+               
+        
+                <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+                  <h4>Resources</h4>
+                  <ul>
+                    <li><a href="#"><p>Blogs</p></a></li>
+                    <li><a href="#"><p>Free resources</p></a></li>
+                  </ul>
+                </div> -->
+        
+              
+        
+                <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+                  <h4>India Address</h4>
+        <p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+        
+        Mobile: +91 75078 35565<br/>
+        Email: rahulg@devigntech.com<br/>
+        </p>
                 </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Features</h4>
-                    <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
+        
+                <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+                  <h4>Canada Address</h4>
+        <p>Unit #100 5230 South Service Road <br/>
+          Burlington Ontario Canada L7L5K2<br/>
+          Mobile: +14164187463<br/>
+          Email: biz@devigntech.com<br/>
+          
+        </p>
                 </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Experts</a></li>
-                        <li><a href="#">Agencies</a></li>
-                    </ul>
+        
+        
+              
+                    </form>
+                  </div>
                 </div>
-                <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>You can trust us. we only send promo offers,</p>
-                    <div class="form-wrap" id="mc_embed_signup">
-                        <form target="_blank"
-                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                            method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                required="" type="email">
-                            <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
-
-                            <div class="info"></div>
-                        </form>
-                    </div>
-                </div>
+              </div>
             </div>
-        </div>
-    </section>
+            
+            </div>
+          </section>
     <footer class="copyright_part">
         <div class="container">
             <div class="row align-items-center">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
-                    made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                    <a href="#"><i class="ti-facebook"></i></a>
-                    <a href="#"> <i class="ti-twitter"></i> </a>
-                    <a href="#"><i class="ti-instagram"></i></a>
-                    <a href="#"><i class="ti-skype"></i></a>
-                </div>
+                    <p class="footer-text m-0 col-lg-8 col-md-12">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved 
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                          </p>
+                          <div style="display: inline;" class="col-lg-4 col-md-12 text-center text-right">
+                                <div style="display: inline;" onclick="openquora()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/quora.png"></img></div> 
+                                <div style="display: inline;" onclick="openfacebook()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/facebook.png"></img></div> 
+                                <div style="display: inline;" onclick="openlinkedin()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/linkedin.png"></img></div> 
+                              </div>
             </div>
         </div>
     </footer>
+
+    <script>
+    function openquora(){
+    window.open("https://www.quora.com/profile/Rahul-Gulati-7");
+}
+
+function openfacebook(){
+    window.open("https://www.facebook.com/gyandevigntech/");
+}
+
+function openlinkedin(){
+    window.open("https://www.linkedin.com/company/gyandevign-tech-services");
+}</script>
     <!-- footer part end-->
 
     <!-- jquery plugins here-->
@@ -535,6 +653,11 @@
     <script src="js/custom.js"></script>
 
 
+    <script>
+   function loadlinkedin(){
+        window.open("https://www.linkedin.com/in/rahul-gulati-b19a6017/");
+    }
+    </script>
 
 </body>
 

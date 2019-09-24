@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tech Seva </title>
+    <title>GyanDevign Tech Services | IT Consulting For Small Businesses
+    </title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,6 +24,17 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/glocaltechseva.appspot.com/o/Logo.png?alt=media&token=87defe3a-41c0-4fd7-a540-dcf26c0ded66" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devigntech.com/"/>
+    <meta property="og:title" content="GyanDevign Tech Services | IT Consulting For Small Businesses" />
+    <meta property="og:description" content="GyanDevign Tech Services is a top web development company in Pune, India. We help small businesses and startups create professional ecommerce websites and software applications"
+/>
 
     <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
@@ -84,7 +96,7 @@
 
                     console.log("this is: " + doc.id);
                     console.log(window.location.href);
-                    document.getElementById("p").appendChild(dataBox);
+                  //  document.getElementById("p").appendChild(dataBox);
 
 
 
@@ -100,32 +112,67 @@
         }
 
         function sub() {
+    //         var modal = document.getElementById("myModal");
+    //     var span = document.getElementsByClassName("close")[0];
+
+    //     span.onclick = function() {
+    //     modal.style.display = "none";
+    //   }
             var db = firebase.firestore();
             db.collection("discussion").add({
                 email: document.getElementById('email').value,
                 name: document.getElementById('name').value,
                 date: (new Date()).toString(),
-            })
-                .then(function (docRef) {
+            }).then(function (docRef) {
+                   // modal.style.display = "block";
+                   alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
                     console.log("Document written with ID: ", docRef.id);
-                })
-                .catch(function (error) {
-                    console.error("Error adding document: ", error);
+
                 });
         }
 
     </script>
 
+<script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+
 </head>
 
-<body onload="loadBlogs()">
+<body>
+       
+        
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 col-xl-8">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -141,7 +188,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">About</a>
                                 </li>
-                                <li class="nav-item dropdown">
+
+                                <li class="nav-item">
+                                        <a class="nav-link" href="service.html">Services</a>
+                                    </li>
+                                <!-- <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Blog
@@ -162,7 +213,7 @@
                                         <a class="dropdown-item" href="service.html">Services</a>
                                         <a class="dropdown-item" href="elements.html">Elements</a>
                                     </div>
-                                </li>
+                                </li> -->
                                 <li class="nav-item active">
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
@@ -173,6 +224,7 @@
             </div>
         </div>
     </header>
+   
     <!-- Header part end-->
 
     <!-- banner part start-->
@@ -190,7 +242,7 @@
                                 <a href="service.html" class="btn_1">
                                     <p style="color: white; font-size:20px">View Services</p>
                                 </a>
-                                <a href="#" class="btn_1">
+                                <a href="contact.html" class="btn_1">
                                     <p style="color:white; font-size:20px">Speak to our expert</p>
                                 </a>
                                 <!--<a href="https://www.youtube.com/watch?v=pBFQdxA-apI" class="popup-youtube video_popup">
@@ -214,24 +266,25 @@
             <div class="row align-items-center justify-content-end">
                 <div class="col-md-6 col-lg-6 col-xl-5">
                     <div class="about_img">
-                        <img src="img/about_img_1.png" alt="">
+                        <img src="img/planningImage.png" alt="" width="120%" height="120%" />
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 offset-xl-1 col-xl-6">
                     <div class="about_text">
 
-                        <h2>Top Web Design and Application Development Outsourcing Company in Pune, India</h2>
+                        <h2>Hire The Top Web Development Outsourcing Company in Pune, India</h2>
                         <p>
                             <ul>
                                 <li>
-                                    <h5>✔️ Get your WordPress website ready that results in business inquiries</h5>
+                                    <h5>✔️ Get your amazing ecommerce WordPress website ready that results in business inquiries
+                                    </h5>
                                 </li><br>
                                 <li>
-                                    <h5>✔️ Make your web application with mature frameworks such as <br> Angular and
-                                        ReactJS to avoid security leaks.
+                                    <h5>✔️ Make your web application rock solid with mature frameworks such as Angular and ReactJS to avoid security leaks.
+
                                 </li><br>
                                 <li>
-                                    <h5>✔️ Design your mobile application with Android or Flutter to save time and cost
+                                    <h5>✔️ Design your mobile application with ReactNative or Flutter to save cost and gift your uses the aha moment
                                 </li>
                                 </h5>
                         </p>
@@ -253,7 +306,7 @@
 
                 <div class="col-md-12 offset-xl-1 col-xl-12">
                     <div class="about_text">
-                        <h2>Is Your Poorly Designed Website Or Application <br> Turning Away Customers ? Let's discuss
+                        <h2>Is Your Bad Website Design Or Application <br> Turning Away Customers ? Let's discuss
                         </h2>
 
                         <div class="form-wrap" id="mc_embed_signup">
@@ -273,7 +326,7 @@
                                 <div class="info"></div>
                             </div>
                         </div>
-                        <button onclick="sub()" href="#" class="btn_2">Submit</button>
+                        <button onclick="sub()" class="btn_2">Submit</button>
                     </div>
                 </div>
             </div>
@@ -291,31 +344,30 @@
             <div class="row">
                 <div class="col-sm-4 col-xl-4">
                     <div class="single_service_part">
-                        <span class="single_service_icon"><i class="flaticon-growth"></i></span>
+                        <span class="single_service_icon"><img src="./img/web_design_services.png" height="60%" width="60%"></img></span>
                         <h4>Web Design</h4>
-                        <p>Do you want to expand your market and build your reputation? FInd out how to make websites
-                            that converts better.</p>
-                        <a href="#" class="btn_3">Read More <i class="ti-arrow-right"></i></a>
+                        <p>Do you want to expand your market and build your reputation? Find out how to make
+                            websites that draw user attention.</p>
+                        <a href="./website_detail.html" class="btn_3">Read More <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xl-4">
                     <div class="single_service_part">
-                        <span class="single_service_icon"><i class="flaticon-growth"></i></span>
+                        <span class="single_service_icon"><img src="./img/web_dev_services.png" height="60%" width="60%"/></span>
                         <h4>Web Application Development</h4>
                         <p>Are you not able to find the right web development outsourcing team? Learn about the process.
                         </p>
-                        <a href="#" class="btn_3">Read More <i class="ti-arrow-right"></i></a>
+                        <a href="./webapp_detail.html" class="btn_3">Read More <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xl-4">
                     <div class="single_service_part single_service_part_2">
-                        <span class="single_service_icon style_icon"><i class="flaticon-wallet"></i></span>
-                        <h4>Mobile Application</h4>
-                        <p>Do you have a product idea that needs to be tested or you want to build an MVP? Let’s
-                            understand your requirement and create a project plan.
+                        <span class="single_service_icon style_icon"><img src="./img/mobile_dev_services.png" height="60%" width="60%"/></span>
+                        <h4>Mobile Application Development</h4>
+                        <p>Do you have a product idea that needs to be tested or you want to build an MVP?
 
                         </p>
-                        <a href="#" class="btn_3 service_btn">Read More <i class="ti-arrow-right"></i></a>
+                        <a href="./Mobile_detail.html" class="btn_3 service_btn">Read More <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -337,7 +389,7 @@
                         <br>
                         <br>
                         <h4>GyanDevign Tech Services LLP is a software development outsourcing company registered in Pune, India
-                            (Month 2019)</h4>
+                            (September 2019)</h4>
                         <br>
 
                         <p>
@@ -346,12 +398,14 @@
                             realize that a positive online authority will scale your bottom line.
                             <br><br>
 
-                            2. If you are a startup founder (with no cash crunch), who understands that building a B2B
+                            2. If you understand that quality work requires a min investment of USD 500 (for professional websites) and USD 4000-USD 6000 for a mobile app development.
+                            <br><br>
+                            3. If you are a startup founder (with no cash crunch), who understands that building a B2B
                             or B2C application requires time, cost and patience from the team. If you plan judiciously
                             and respond to your user feedback, you can scale fast.
 
                         </p>
-                        <a href="#" class="btn_2">read more</a>
+                        <a href="about.html" class="btn_2">read more</a>
                     </div>
                 </div>
 
@@ -394,7 +448,7 @@
                     <br>
                     <h3><b style="color: cornflowerblue">✔</b> Paid Trial for 2 weeks</h3>
                     <br>
-                    <p>You can gauge or tech capability by doing a pilot project. It gives you a clear idea,
+                    <p>You can gauge our tech capability by doing a pilot project. It gives you a clear idea,
                         if you have found the right fit - process, communication and deliverables.</p>
                     <br>
                     <br>
@@ -414,12 +468,12 @@
                 <div class="col-xl-5">
                     <br>
                     <h3><b style="color: cornflowerblue">✔</b> Empathy For Free</h3>
-                    <p>Let’s admit that. We are human beings first. And empathy is at the core of human relationships.
+                    <p>Let’s admit that we are human beings first. And empathy is at the core of human relationships.
                         And human relationships make life worth living and rewarding.</p>
                     <br>
                     <br>
 
-                    <h3><b style="color: cornflowerblue">✔</b> Non Compete Agreement</h3>
+                    <h3><b style="color: cornflowerblue">✔</b> Non-Compete Agreement</h3>
                     <br>
                     <p>Your clients, code and project folders are never compromised. We sign a non compete agreement.
                         You’re assured of a strong work ethic from the time of on-boarding.</p>
@@ -471,52 +525,112 @@
                     <div class="card-columns">
                         <div class="card">
                             <blockquote class="blockquote mb-0">
-                                <h2>Explore Our Best
-                                    Practice Area</h2>
-                                <p>Male bring land. Dominion over can yielding his moveth under him is.
-                                    Multiply which firmament</p>
+                                <h2>OUR PORTFOLIO</h2>
+                               
                             </blockquote>
                         </div>
                         <div class="card">
-                            <img src="img/gallery/gallery_item.png" class="card-img-top" alt="...">
+                            <img src="img/brewandblends.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <a href="project_details.html">
-                                    <h5 class="card-title">Startup Project</h5>
+                                <a href="https://brewsnblends.com/">
+                                    <h5 class="card-title">brewsnblends</h5>
                                 </a>
-                                <p class="card-text">All days lights grass midst from unto</p>
+                                <p class="card-text">An indigeneous beverage online store serving wide range of tea and coffee products for health conscious young Indians- Site made with WordPress-WooCommerce.</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/gallery/gallery_item_1.png" class="card-img-top" alt="...">
+                            <img src="img/boxsimple.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <a href="project_details.html">
-                                    <h5 class="card-title">Startup Project</h5>
+                                <a href="http://boxsimple.ca">
+                                    <h5 class="card-title">Boxsimple</h5>
                                 </a>
-                                <p class="card-text">All days lights grass midst from unto</p>
+                                <p class="card-text">A website for all your packaging needs made with WordPress
+                                    </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/gallery/gallery_item_2.png" class="card-img-top" alt="...">
+                            <img src="img/gamerzzweb.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <a href="project_details.html">
-                                    <h5 class="card-title">Startup Project</h5>
+                                <a href="https://gamerzzweb.com">
+                                    <h5 class="card-title">Gamerzz</h5>
                                 </a>
-                                <p class="card-text">All days lights grass midst from unto</p>
+                                <p class="card-text">GAMERZZ IS #1 PLATFORM FOR GAMERSS. BUILT WITH ANDROID STUDIO AND BOOTSTRAP, HTML, NODEJS AND FIREBASE</p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="img/gallery/gallery_item_3.png" class="card-img-top" alt="...">
+                            <img src="img/a7aweb.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <a href="project_details.html">
-                                    <h5 class="card-title">Startup Project</h5>
+                                <a href="https://a7aweb.web.app">
+                                    <h5 class="card-title">A7AWEB</h5>
                                 </a>
-                                <p class="card-text">All days lights grass midst from unto</p>
+                                <p class="card-text">A7A is a group of great developers. Website is built with HTML, REACTJS, FIREBASE AND BOOTSTRAP</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <section class="about_part">
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-md-4 col-lg-4 col-xl-3">
+                    <div class="about_img">
+                        <img src="img/appcalci.png" height="300px", width="600px" alt="">
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8  col-xl-8">
+                    <div class="about_text">
+
+                        <h2>Try Out Our Project Estimator Tool</h2>
+
+                        <p>
+                            Are you not sure how much a website or an application development would cost? Have you received packages from vendors claiming,” know it all”? Is your partner not asking enough questions to define the scope of work?
+                            <br/> <br/>
+Well, You’re not alone. Your agony ends here Use the project estimator tool to easily identify a budget range for developing a website or a mobile application.
+
+                        </p>
+                        <p>
+                            <ul>
+                                <li>
+                                    <h5>✔️ An Interactive calculator that asks you relevant questions
+                                    </h5>
+                                </li><br>
+                                <li>
+                                    <h5>✔️ You get the estimates in 5 minutes
+
+
+                                </li><br>
+                                <li>
+                                    <h5>✔️ You make a strong buying decision
+                                </li>
+                                <br>
+                                <li>
+                                    <h5>✔️  Prompts you to set up a call with our technical expert
+                                </li>
+
+                               
+
+                                </h5>
+
+                        </p>
+                      
+                        </ul>
+                    </div>
+                   
+
+                </div>
+                <button style="margin-right: 2px" onclick="openMobile()" class="btn_2">TRY MOBILE CALCULATOR</button>
+                <button style="margin-right: 2px" onclick="openWebapp()" class="btn_2">TRY WEBAPP CALCULATOR</button>
+                <button onclick="openWebsite()" href="" class="btn_2">TRY WEBSITE CALCULATOR</button>
+            </div>
+            
+        </div>
+        <div class="hero-app-7 custom-animation"><img src="img/animate_icon/icon_1.png" alt=""></div>
+        <div class="hero-app-8 custom-animation2"><img src="img/animate_icon/icon_2.png" alt=""></div>
+        <div class="hero-app-6 custom-animation3"><img src="img/animate_icon/icon_3.png" alt=""></div>
     </section>
     <!-- portfolio_part part end-->
 
@@ -526,13 +640,13 @@
 
 
     <!--::blog_part start::-->
-    <section class="blog_part section_padding">
+    <!-- <section class="blog_part section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section_tittle text-center">
-                        <h2>Update From Blog</h2>
-                        <p>Winged hath had face creepeth abundantly so shall fire apperar </p>
+                        <h2>Recent Articles</h2>
+                        <p> </p>
                     </div>
                 </div>
             </div>
@@ -544,91 +658,117 @@
 
         </div>
         </div>
-    </section>
+    </section> -->
     <!--::blog_part end::-->
 
     <!-- footer part start-->
+   
+   
     <section class="footer-area section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Top Products</h4>
-                    <ul>
-                        <li><a href="#">Managed Website</a></li>
-                        <li><a href="#">Manage Reputation</a></li>
-                        <li><a href="#">Power Tools</a></li>
-                        <li><a href="#">Marketing Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Features</h4>
-                    <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Experts</a></li>
-                        <li><a href="#">Agencies</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-4 col-sm-8 col-md-8 mb-4 mb-xl-0 single-footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>You can trust us. we only send promo offers,</p>
-                    <div class="form-wrap" id="mc_embed_signup">
-                        <form target="_blank"
-                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                            method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                                required="" type="email">
-                            <button class="click-btn btn btn-default text-uppercase btn_2">subscribe</button>
-                            <div style="position: absolute; left: -5000px;">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                            </div>
+        <div class="container-fluid">
+          <div class="row">
+    
+              <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+                  <h4>ABOUT US</h4>
+                  <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+                 </div>
+    
+            <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="#"><p>Website Design</p></a></li>
+                <li><a href="#"><p>Webapp Development</p></a></li>
+                <li><a href="#"><p>Mobile App Development</p></a></li>
+              </ul>
+            </div>
+           
+    
+            <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#"><p>Blogs</p></a></li>
+                <li><a href="#"><p>Free resources</p></a></li>
+              </ul>
+            </div> -->
+    
+          
+    
+            <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+              <h4>India Address</h4>
+    <p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+    
+    Mobile: +91 75078 35565<br/>
+    Email: rahulg@devigntech.com<br/>
+    </p>
+            </div>
+    
+            <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+              <h4>Canada Address</h4>
+    <p>Unit #100 5230 South Service Road <br/>
+      Burlington Ontario Canada L7L5K2<br/>
+      Mobile: +14164187463<br/>
+      Email: biz@devigntech.com<br/>
+      
+    </p>
+            </div>
+    
+    
+          
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </section>
 
-                            <div class="info"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="copyright_part">
+      <footer class="copyright_part">
         <div class="container">
-            <div class="row align-items-center">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
-                    made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                    <a href="#"><i class="ti-facebook"></i></a>
-                    <a href="#"> <i class="ti-twitter"></i> </a>
-                    <a href="#"><i class="ti-instagram"></i></a>
-                    <a href="#"><i class="ti-skype"></i></a>
-                </div>
+          <div class="row align-items-center">
+            <p class="footer-text m-0 col-lg-8 col-md-12">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved 
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            <div style="display: inline;" class="col-lg-4 col-md-12 text-center text-right">
+              <div style="display: inline;" onclick="openquora()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/quora.png"></img></div> 
+              <div style="display: inline;" onclick="openfacebook()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/facebook.png"></img></div> 
+              <div style="display: inline;" onclick="openlinkedin()"><img href="google.com" style="margin-left: 5px;margin-right: 5px; margin-bottom: 5px" height="35px" width="35px" src="./img/linkedin.png"></img></div> 
             </div>
+          </div>
         </div>
-    </footer>
+      </footer>
+
+      <script>
+
+function openquora(){
+    window.open("https://www.quora.com/profile/Rahul-Gulati-7");
+}
+
+function openfacebook(){
+    window.open("https://www.facebook.com/gyandevigntech/");
+}
+
+function openlinkedin(){
+    window.open("https://www.linkedin.com/company/gyandevign-tech-services");
+}
+
+      function openMobile(){
+       window.open('mobile-app-cost-calculator.html');
+      }
+
+      function openWebapp(){
+        window.open('web-app-cost-calculator.html');
+
+      }
+
+      function openWebsite(){
+        window.open('web-design-cost-calculator.html');
+
+      }
+      </script>
     <!-- footer part end-->
 
     <!-- jquery plugins here-->

@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bizcon</title>
+    <title>Mobile App Development Company Ontario Canada | Build Flutter Apps in 3 Weeks</title>
     <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,21 +23,121 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/glocaltechseva.appspot.com/o/Logo.png?alt=media&token=87defe3a-41c0-4fd7-a540-dcf26c0ded66" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://devigntech.com/"/>
+    <meta property="og:title" content="Mobile App Development Company Ontario Canada | Build Flutter Apps in 3 Weeks" />
+    <meta property="og:description" content="We have developed mobile MVP for startups. Don’t choose any agency who needs your money, instead work with a reliable mobile app development company in Ontario, Canada, who want you to succeed.  Develop high quality cross platform app development with Flutter, ReactNative and Xamarin. Our mobile app consultants deliver high quality experience without performance lags.
+    "
+/>
+
+
     <!--ACCORDIAN FAQ SCRIPTS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+          authDomain: "glocaltechseva.firebaseapp.com",
+          databaseURL: "https://glocaltechseva.firebaseio.com",
+          projectId: "glocaltechseva",
+          storageBucket: "glocaltechseva.appspot.com",
+          messagingSenderId: "775906035664",
+          appId: "1:775906035664:web:238e3bef340bd103"
+      };
+      firebase.initializeApp(firebaseConfig);
+
+
+      function speakToMobileExpert(){
+
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+        modal.style.display = "none";
+      }
+       var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      var subject = document.getElementById("subject").value;
+
+      if(name != null && email != null && message != null && subject != null){
+          firebase.firestore().collection("mobileexpert").add({
+      name : name,
+      email : email, 
+      message : message,
+      subject : subject,
+      date: (new Date()).toString()
+  }).then(function(val){
+    modal.style.display = "block";
+  });
+      }
+      else{
+          alert("All fields are required!!");
+      }
+      }
+      </script>
 </head>
 
 <body>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div style="background:#43A047" class="modal-content">
+      <span class="close">&times;</span>
+      <p style="color:white">Thanks for submiting your request. You will get an introduction email from us within 2 busines days</p>
+    </div>
+  
+  </div>
     <!--::header part start::-->
     <header class="main_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -53,29 +153,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">About</a>
                                 </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.html">Blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Page
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="project.html">Project</a>
-                                        <a class="dropdown-item" href="project_details.html">Project Details</a>
-                                        <a class="dropdown-item" href="service.html">Services</a>
-                                        <a class="dropdown-item" href="elements.html">Elements</a>
-                                    </div>
-                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="service.html">Services</a>
+                              </li>
+                                
                                 <li class="nav-item active">
                                     <a class="nav-link" href="contact.html">Contact</a></li>
                                 </li>
@@ -86,7 +167,8 @@
             </div>
         </div>
     </header>
-    <section class="breadcrumb breadcrumb_bg">
+
+    <!-- <section class="breadcrumb breadcrumb_bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -99,7 +181,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <img src="./img/mobileapp.jpg"/>
 
     <section class="service_part section_padding ">
         <div class="container">
@@ -119,10 +203,9 @@
                                 <p>
                                   <font size="+1">
                                     
-                                      If you’re experienced entrepreneur or a non tech founder, do not haste your product development activity. Instead, work with a mobile app development outsourcing company in Pune, India.
-
+                                      If you’re experienced entrepreneur or a non tech founder, do not haste your product development activity. Instead, build an MVP and work with a mobile app development company in Ontario, Canada.
                                     <br><br>
-                                    We specialize in building native and hybrid mobile apps for first time entrepreneurs and small online brands who want to engage users with new features and sales offers.
+                                    We specialize in building hybrid mobile apps for startups, first time entrepreneurs and small online brands.
 
                                   </font>
 
@@ -150,18 +233,16 @@
                                         suggestion on building you app with <b style="color: black">MVP approach</b> - your users will buy your
                                         product for the solution it offers, not for extra features. 
 
-                                        <h4>You do not want to be old school in business promotion and branding.
-                                            Businesses worldwide are shifting from print ads to mobile realm. You can
-                                            catch the train when you have a reliable mobile app development company at
-                                            your side.
+                                        <h4>You do not want to be old school in business promotion and branding. Businesses worldwide are shifting from print ads to mobile realm. You can catch the train when you have a reliable mobile app development company in India at your side.
 
-                                            We can build your mobile app that sells products to your customers and
-                                            trends on the app store</h4>
+                                            We build your mobile app that sells products to your customers and trends on the app store.
+                                            </h4>
                                     </font>
                                 </p>
                                 <br><br>
                                 <h1>
-                                    What Is the Process ? <br>
+                                    MOBILE APP DEVELOPMENT PROCESS<br>
+                                    <img src="./img/mobileappprocess.jpg"  height="70%", width="70%"/>
                                 </h1>
                                 <div class=about_text>
 
@@ -203,7 +284,7 @@
                                                     </div>
 
                                                     <div class="col-4">
-                                                        <button class="btn_1"> GET AN ESTIMATE</button>
+                                                        <a href= "./mobile-app-cost-calculator.html" class="btn_1"> GET AN ESTIMATE</a>
                                                         
                                                     </div>
 
@@ -344,9 +425,27 @@
                                                                           </div>
                                                                         </div>
                                                                       </div>
+
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapse11n">
+                                                                              <h5> 11. Do you have any presence in North America?</h5>
+                                                                            </a>
+                                                                          </div>
+                                                                          <div id="collapse11n" class="collapse" data-parent="#accordion">
+                                                                            <div class="card-body">
+                                                                              <p><font size = "+1">Yes, we have our presence in Canada and strive to become the top mobile app development company in Ontario, Canada.
+
+                                                                                </p>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
                                                       </div>
 
                                             <br>
+
+                                            <hr style="background-color: black"/>
+
                                             <!--  <p>
                                                 <font size="+1">
                                                     Is your web application suffering from slow load time and poorly
@@ -471,7 +570,7 @@
                 <h2 class="contact-title">Speak to our Mobile App Consultant</h2>
               </div>
               <div class="col-lg-6">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                <div class="form-contact contact_form"  id="contactForm" novalidate="novalidate">
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">
@@ -496,9 +595,9 @@
                     </div>
                   </div>
                   <div class="form-group mt-3">
-                    <button type="submit" class="button button-contactForm btn_4">Send Message</button>
+                    <button onclick="speakToMobileExpert()" type="submit" class="button button-contactForm btn_4">Send Message</button>
                   </div>
-                </form>
+                </div>
               </div>
               
             </div>

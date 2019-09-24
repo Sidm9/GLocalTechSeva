@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MOBILE APP COST CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="icon" href="img/favicon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- themify CSS -->
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="css/flaticon.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- swiper CSS -->
+  <link rel="stylesheet" href="css/slick.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<title>MOBILE APP COST CALCULATOR</title>
+  <style>
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      </style>
+
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAENGXlfzYMQHXRL3MdXL1Lt-hxsREGgQI",
+        authDomain: "glocaltechseva.firebaseapp.com",
+        databaseURL: "https://glocaltechseva.firebaseio.com",
+        projectId: "glocaltechseva",
+        storageBucket: "glocaltechseva.appspot.com",
+        messagingSenderId: "775906035664",
+        appId: "1:775906035664:web:238e3bef340bd103"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+  <script>
+
+
+
+    var screensnumber = 0;
+    var type = ""
+    var aud = ""
+    var designs = ""
+    var appdata = ""
+    var musthave="";
+    var additional="";
+    var usp;
+    var projectDoc = "";
+  
+    function changeToAndroid(id) {
+      var option1 = document.getElementById("Android").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+      type = "android"
+    }
+
+    function changeToHybrid(id) {
+      var option1 = document.getElementById("Hybrid").innerHTML;
+      document.getElementById("App").innerHTML = option1;
+      type= "hybrid"
+    }
+
+    function changeToB2B (id) {
+      aud = "B2B"
+      var option = document.getElementById("B2B").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToB2C (id) {
+      aud = "B2C"
+      var option = document.getElementById("B2C").innerHTML;
+      document.getElementById("Target-Audience").innerHTML = option;
+    }
+
+    function changeToDesignY (id) {
+      designs = "yes"
+      var option = document.getElementById("DesignYes").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+      document.getElementById("projectDocs").style.display = "none";
+
+    }
+
+    function changeToDesignN (id) {
+      designs = "No"
+      var option = document.getElementById("DesignNo").innerHTML;
+      document.getElementById("Designs").innerHTML = option;
+      document.getElementById("projectDocs").style.display = "inline";
+      //var compdocument.getElementById("competitorUrl").value;
+
+    }
+
+    function changeToProjectY (id) {
+      projectDoc = "Yes";
+      var option = document.getElementById("Project-Yes").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+      document.getElementById("shareComp").style.display = "none";
+
+
+    }
+
+    function changeToProjectN (id) {
+      projectDoc = "No";
+      var option = document.getElementById("Project-No").innerHTML;
+      document.getElementById("Project").innerHTML = option;
+      document.getElementById("shareComp").style.display = "inline";
+
+    }
+ 
+    function changeToScreenA (id) {
+      screensnumber = 1;
+      var option = document.getElementById("5-10").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenB (id) {
+      screensnumber = 2
+      var option = document.getElementById("10-20").innerHTML;
+      document.getElementById("Screen").innerHTML = option;
+    }
+
+    function changeToScreenC (id) {
+      screensnumber = 3;
+      var option = document.getElementById("20-40").innerHTML;
+      document.getElementById("Screen").innerHTML  = option;
+    }
+
+
+    function changeToFirebase(id){
+      appdata = "firebase"
+      var option = document.getElementById("gf").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAmazon(id){
+      appdata="aws"
+      var option = document.getElementById("aws").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToAzure(id){
+      appdata="azure"
+      var option = document.getElementById("ma").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function changeToInternalStorage(id){
+      appdata="internal storage"
+      var option = document.getElementById("mes").innerHTML;
+      document.getElementById("service").innerHTML  = option;
+    }
+
+    function submit() {
+
+    }
+
+    function anyOtherUSP(){
+     
+        console.log("Any other choice");
+      document.getElementById('otherText').style.display="inline"
+      //usp =  document.getElementById('otherText').value
+    }
+
+    function anyOther1(){
+     usp = "online food store"
+  console.log("Any other choice");
+   document.getElementById('otherText').style.display="none"
+
+ }
+
+ function anyOther2(){
+  usp = "retail app"
+     console.log("Any other choice");
+   document.getElementById('otherText').style.display="none"
+
+ }
+
+ function anyOther3(){
+  usp = "health care"
+     console.log("Any other choice");
+   document.getElementById('otherText').style.display="none"
+
+ }
+
+ function anyOther4(){
+  usp = "filter basic and advance"
+     console.log("Any other choice");
+   document.getElementById('otherText').style.display="none"
+
+ }
+
+ function calculateAndUpload(){
+
+
+  if (usp!=null){
+
+  }
+  else{
+    usp = document.getElementById('otherText').value
+
+  }
+  
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var comp = document.getElementById("competitorUrl").value;
+  //var aud = document.getElementById("audienceText").value;
+  var check = document.getElementById("agree").checked
+
+  var mustHaveNumber = 0, additionalFeaturesNumber = 0;
+
+  var ele2 = document.getElementsByName('mustHave'); 
+            for(i = 0; i < ele2.length; i++) { 
+                if(ele2[i].checked) {
+                two = ele2[i].value
+                mustHaveNumber = mustHaveNumber + 1;
+                //musthave.push(ele2[i].value);
+                musthave = musthave + " , " + ele2[i].value;
+                console.log(ele2[i].value)
+                }
+            }
+            
+  var ad = document.getElementsByName('additionalFeatures');
+  for(i = 0; i < ad.length; i++) { 
+                if(ad[i].checked) {
+                two = ad[i].value
+                additionalFeaturesNumber = additionalFeaturesNumber + 1
+               // additional.push(ad[i].value);
+               additional = additional + " , " + ad[i].value
+                console.log(ad[i].value)
+                }
+            }
+
+            console.log(musthave);
+  console.log(additional);
+
+            if(screensnumber == 1 && mustHaveNumber <= 4 && additionalFeaturesNumber <=3){
+              console.log("1000-3000");
+
+              if(name!=null && email!=null && check){
+                firebase.firestore().collection("mobilecalc").add({
+                price : "1000-3000",
+                name : name,
+                email : email,
+                comp : comp,
+                aud : aud,
+                designs : designs,
+                appdata:appdata,
+                usp:usp,
+                additional:additional,
+                musthave : musthave,
+                projectDoc:projectDoc,
+                screens : "5-10",
+                otherusp : document.getElementById('otherText').value,
+                date: (new Date()).toString(),
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+              }
+             
+              
+            }
+
+            else if(screensnumber==2 && mustHaveNumber <= 4 && additionalFeaturesNumber <= 3){
+              console.log("5000-12000")
+              if(name!=null && email!=null  && check){
+                firebase.firestore().collection("mobilecalc").add({
+                price : "5000-12000",
+                name : name,
+                email : email,
+                comp : comp,
+                aud : aud,
+                designs : designs,
+                appdata:appdata,
+                usp:usp,
+                screens:"10-20",
+                additional:additional,
+                musthave : musthave,
+                projectDoc:projectDoc,
+                otherusp : document.getElementById('otherText').value,
+                date: (new Date()).toString(),
+
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+                console.log(v)
+              })
+              }
+            }
+
+            else if(screensnumber==2 && mustHaveNumber >= 4 && additionalFeaturesNumber >= 3){
+              console.log("8000-20000")
+              if(name!=null && email!=null  && check){
+                firebase.firestore().collection("mobilecalc").add({
+                price : "8000-20000",
+                name : name,
+                email : email,
+                comp : comp,
+                aud : aud,
+                designs : designs,
+                appdata:appdata,
+                usp:usp,
+                additional:additional,
+                musthave : musthave,
+                projectDoc:projectDoc,
+                screens:"10-20",
+                otherusp : document.getElementById('otherText').value,
+                date: (new Date()).toString(),
+
+              }).then(function(val){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+              });
+              }
+            }
+
+            else if(screensnumber==3 && mustHaveNumber >= 6 && additionalFeaturesNumber >= 3){
+              console.log("150000-30000")
+              if(name!=null && email!=null && check){
+                firebase.firestore().collection("mobilecalc").add({
+                price : "15000-30000",
+                name : name,
+                email : email,
+                comp : comp,
+                aud : aud,
+                designs : designs,
+                appdata:appdata,
+                usp:usp,
+                projectDoc:projectDoc,
+                additional:additional,
+                musthave : musthave,
+                screens : "20-40",
+                date: (new Date()).toString(),
+
+              }).then(function(v){
+                alert("Thanks for submiting your request. You will get an introduction email from us within 2 busines days")
+
+              })
+              }
+            }
+
+            else {
+              alert("Please contact us. ")
+            }
+ }
+    
+
+  </script>
+
+</head>
+
+
+<body>
+
+    <header class="main_menu">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html"> <img src="img/Logo.png" alt="logo" height="40%" width="40%"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+    
+                    
+                   
+                    <li class="nav-item">
+                            <a class="nav-link" href="service.html">Service</a>
+                        </li>
+                   
+                  
+                    <li class="nav-item active">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+  <div class="container">
+
+    <h2> <center>APP COST CALCULATOR</center></h2>
+      
+      <div class="row">
+        
+          
+         
+              
+
+
+
+        <h5>You want to build an app in ?</h5>
+        <div class="dropdown col-sm">
+
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id="App">
+              App 
+          </button>
+          <div class="dropdown-menu">
+            <p  class="dropdown-item" id="Hybrid" onclick="changeToHybrid()">Hybrid - Xamarin, Flutter and ReactNative</p>
+            <p class="dropdown-item" onclick="changeToAndroid()" id="Android">Android </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <hr width="100%">
+
+
+      <div class="row">
+          <h5> Who is your target audience </h5>
+          <div class="dropdown col-sm">
+            
+              <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+                data-toggle="dropdown" id ="Target-Audience">
+                Target Audience 
+            </button>
+            <div class="dropdown-menu">
+              <p class="dropdown-item"  onclick = "changeToB2B() " id="B2B">B2B </p>
+              <p class="dropdown-item"  onclick = "changeToB2C() " id="B2C">B2C </p>
+            </div>
+          </div>
+  
+        </div>
+
+     
+      <hr width="100%">
+
+
+     
+      <div class="row">
+          <h5>What is the USP of your app
+          </h5>
+          <label onclick="anyOther1()" class="container">Online Food Store
+            <input type="radio" name="usp"  value="Online Food Store">
+            <span class="checkmark"></span>
+          </label>
+          <label onclick="anyOther2()" class="container">Retail app
+            <input type="radio" name="usp" value="Retail app">
+            <span class="checkmark"></span>
+          </label>
+          <label onclick="anyOther3()" class="container">Health Care
+            <input type="radio" name="usp" value="Health Care">
+            <span class="checkmark"></span>
+          </label>
+          <label onclick="anyOther4()" class="container">Filter - Basic and Advance
+            <input type="radio" name="usp" value="Fitness">
+            <span class="checkmark"></span>
+          </label>
+
+          <label onclick="anyOtherUSP()" class="container">Any Other USP 
+              <input type="radio" name="usp" id="otherUSP" value="Any Other USP">
+              <span class="checkmark"></span>
+            </label>
+
+          
+            <textarea style="display:none" id="otherText"  rows="1"></textarea>
+
+
+      </div>
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <h5>Are your designs ready ?</h5>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Designs">
+              Designs Check
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <p class="dropdown-item"  id="DesignYes" onclick="changeToDesignY()">Yes</p>
+            <p class="dropdown-item"  id="DesignNo"  onclick="changeToDesignN()">No</p>
+          </div>
+        </div>
+      </div>
+
+
+      <hr width="100%">
+
+      <div id="projectDocs" style="display:none" class="row">
+        <h5>If No, then do you have a project requirement document </h5>
+        <div class="dropdown col-sm">
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Project">
+              Project Document
+       
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item"  onclick = "changeToProjectY()" id="Project-Yes">Yes</a>
+            <a class="dropdown-item"  onclick = "changeToProjectN()" id="Project-No">No</a>
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+      <div class="row" id="shareComp" style="display: none">
+        <br>
+        <h5> If No, then share any competitor app </h5>
+
+        <div class="dropdown col-sm">
+            <div class="form-group">
+                
+                <textarea class="form-control" id="competitorUrl" rows="1"></textarea>
+              </div>
+        </div>
+
+      </div>
+
+
+      <hr width="100%">
+
+      <div class="row">
+        <h5>How many screens will the app has </h5>
+        <div class="dropdown col-sm">
+
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "Screen">
+              Number of Screens.
+          
+          </button>
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item"  onclick = "changeToScreenA()" id="5-10"> 5-10 </a>
+            <a class="dropdown-item"  onclick = "changeToScreenB()" id="10-20"> 10-20</a>
+            <a class="dropdown-item"  onclick = "changeToScreenC()" id="20-40"> 20-40</a>
+          </div>
+
+        </div>
+      </div>
+
+      <hr width="100%">
+
+      <div class="row">
+        <h5>Where do you want to save your application data?</h5>
+        <div class="dropdown col-sm">
+
+          
+            <button style="border-radius: 30px" font color="white" type="button" class="btn btn-warning dropdown-toggle"
+              data-toggle="dropdown" id = "service">
+              Services
+          
+          </button>
+
+          
+
+          <div class="dropdown-menu">
+            <a class="dropdown-item"  onclick = "changeToInternalStorage()" id="mes"> Mobile Internal Storage (encrypted) </a>
+            <a class="dropdown-item"  onclick = "changeToFirebase()" id="gf"> Google Firebase            </a>
+            <a class="dropdown-item"  onclick = "changeToAzure()" id="ma"> Microsoft Azure            </a>
+            <a class="dropdown-item" onclick = "changeToAmazon()" id="aws">Amazon AWS            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <hr width="100%">
+
+
+      <div class="row">
+          <h5>Select the must have features in the app?</h5>
+        <br/>
+        <div class="dropdown col-sm row">
+          </div>
+          <br/>
+          
+            
+
+
+          <div class="row mt-2">
+            <label class="container">Login/Sign Up (Facebook/Google Authentication)
+              <input type="checkbox" name="mustHave" checked="checked" value="Login/Sign Up (Facebook/Google Authentication)">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"> User Profile (with profile picture upload)
+              <input type="checkbox" name="mustHave" value="User Profile (with profile picture upload)">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Graphs/Charts
+              <input type="checkbox" name="mustHave" value="Graphs/Charts">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Filter - Basic and Advance
+              <input type="checkbox" name="mustHave" value="Filter - Basic and Advance">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">App Launch Tutorial 
+                <input type="checkbox" name="mustHave" value="App Launch Tutorial ">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container">Like Image/file upload, chat, comments
+                  <input type="checkbox" name="mustHave" value="Like Image/file upload, chat, comments">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container">Threads, Sharing, billing, coupon code
+                    <input type="checkbox" name="mustHave" value="Threads, Sharing, billing, coupon code ">
+                    <span class="checkmark"></span>
+                  </label>
+          </div>
+          
+
+       
+      </div>
+
+      <hr width="100%">
+
+
+      <div class="row">
+          <h5>Do you need any of these features included?            </h5>
+
+          <div class="dropdown col-sm">
+              <br/>
+          </div>
+              
+  
+  
+            <div class="row">
+              <label class="container">Push Notification
+                <input type="checkbox" name="additionalFeatures" checked="checked" value="Push Notification">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container"> Payment Integration
+                <input type="checkbox" name="additionalFeatures" value="Payment Integration">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">OTP verification
+                <input type="checkbox" name="additionalFeatures" value="OTP verification">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container">In App Purchase
+                <input type="checkbox" name="additionalFeatures" value="In App Purchase">
+                <span class="checkmark"></span>
+              </label>
+  
+              <label class="container">Real Time Tracking (Google Maps)
+                  <input type="checkbox" name="additionalFeatures" value="Real Time Tracking (Google Maps)">
+                  <span class="checkmark"></span>
+                </label>
+  
+               
+            
+  
+          
+        </div>
+  
+        <hr width="100%">
+
+
+      <div class="row">
+
+        <p> Thanks for answering all the questions. One last step, we promise, your quote will reach your inbox in
+          next 60 seconds</p> <br>
+      </div>
+      <br>
+
+      
+      </div>
+
+      <div class="row">
+
+          <p>NAME</p>
+          <textarea class="form-control" id="name" rows="1"></textarea>
+
+        <p>EMAIL</p>
+            <textarea class="form-control" id="email" rows="1"></textarea>
+             
+
+      <br><br>
+      <div class="row mt-3">
+      <label class="container"><b> I agree to share the information with GyanDevign Tech Services. All the data shared is for
+          official purpose and for the best interest of both parties. </b>
+          <input id="agree" type="checkbox" name="additionalFeatures" value="Real Time Tracking (Google Maps)">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <br> <br>
+      <center>
+
+        <button style="border-radius: 20px" align="middle" font color="white" type="button" class="btn btn-warning"
+          onclick="calculateAndUpload()" data-toggle="dropdown">
+       <b>  <font size = "+1" >Submit </font>  </b> </center>
+      </font></button>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+  <section class="footer-area section_padding">
+    <div class="container-fluid">
+      <div class="row">
+
+          <div class="col-xl-3 col-sm-3 mb-3 mb-xl-0 single-footer-widget">
+              <h4>ABOUT US</h4>
+              <p>Gyan Devign Tech is a web design and application development outsourcing company in India.</p>
+             </div>
+
+        <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#"><p>Website Design</p></a></li>
+            <li><a href="#"><p>Webapp Development</p></a></li>
+            <li><a href="#"><p>Mobile App Development</p></a></li>
+          </ul>
+        </div>
+       
+
+        <!-- <div class="col-xl-2 col-sm-4 mb-4 mb-xl-0 single-footer-widget">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#"><p>Blogs</p></a></li>
+            <li><a href="#"><p>Free resources</p></a></li>
+          </ul>
+        </div> -->
+
+      
+
+        <div class="col-xl-3 col-sm-3 mb-2 mb-xl-0 single-footer-widget">
+          <h4>India Address</h4>
+<p>	D-201 Vardhaman Township,<br/> Sasane Nagar,<br/> Pune, 411028, <br/>Maharashtra, India <br/>
+
+Mobile: +91 75078 35565<br/>
+Email: rahulg@devigntech.com<br/>
+</p>
+        </div>
+
+        <div class="col-xl-2 col-sm-2 mb-2 mb-xl-0 single-footer-widget">
+          <h4>Canada Address</h4>
+<p>Unit #100 5230 South Service Road <br/>
+  Burlington Ontario Canada L7L5K2<br/>
+  Mobile: +14164187463<br/>
+  Email: biz@devigntech.com<br/>
+  
+</p>
+        </div>
+
+
+      
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </section>
+  
+</body>
+
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="js/swiper.min.js"></script>
+<!-- swiper js -->
+<script src="js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- swiper js -->
+<script src="js/slick.min.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
+
+<script src="jquery.2.min.js"></script>
+<script src="jquery.mixitup.min.js"></script>
+<script>
+    $('.containMix').mixItUp();
+</script>
+
+</html>
